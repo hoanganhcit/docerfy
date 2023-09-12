@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact" dir="ltr" data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Dashboard - Docerfy</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="">
+    <!-- Canonical SEO -->
+    <link rel="canonical" href="">
+
+    <!-- Favicon -->
+    <link rel="stylesheet" href="assets/css/tabler-icons.css" />
+    <link rel="icon" type="image/x-icon"
+        href="assets/images/favicon.png" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="assets/css/core.css" />
+    <link rel="stylesheet" href="assets/css/theme-default.css" />
+    <link rel="stylesheet" href="assets/css/dataTable.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!-- PAGE CSS -->
+
+    <link rel="stylesheet" href="assets/vendor/libs/bootstrap-select/bootstrap-select.css">
+    <link rel="stylesheet" href="assets/vendor/libs/sweetalert2/sweetalert2.css">
+    <link rel="stylesheet" href="assets/css/dropzone.css">
+
+    <!-- Helpers -->
+    <script src="assets/js/helpers.js"></script>
+    <script src="assets/js/config.js"></script>
+</head>
+
+<body>
+    <div class="layout-wrapper layout-content-navbar  ">
+        <div class="layout-container">
+            <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+                <div class="app-brand demo ">
+                    <a href="dashboard.html" class="app-brand-link">
+                        <span class="app-brand-logo demo">
+                            <img src="assets/images/logo.png" alt="" style="height: 35px;">
+                        </span>
+                    </a>
+                    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
+                        <i class="fal fa-scrubber menu-toggle-icon d-none d-xl-block align-middle"></i>
+                        <i class="fal fal-times d-block d-xl-none align-middle"></i>
+                    </a>
+                </div>
+                <div class="menu-inner-shadow"></div>
+                <ul class="menu-inner py-1">
+                    <li class="menu-item  ">
+                        <a href="Dashboard.html" class="menu-link">
+                            <i class="menu-icon tf-icons fal fa-tachometer-alt"></i>
+                            <div>Dashboard</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons fal fa-user-unlock"></i>
+                            <div>Access Authenticator</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item ">
+                                <a href="Documents.html" class="menu-link">
+                                    <div>Documents</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="Media.html" class="menu-link">
+                                    <div>Media</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <div>Google Drive</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <div>Dropbox</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item active open">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons fal fa-signature"></i>
+                            <div>E-Signature</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item active">
+                                <a href="Envelope.html" class="menu-link">
+                                    <div>Envelope</div>
+                                </a>
+                            </li>
+                            <li class="menu-item ">
+                                <a href="Signing-Template.html" class="menu-link">
+                                    <div>Signing Template</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons fal fa-server"></i>
+                            <div>Server Access</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item">
+                                <a href="Server.html" class="menu-link">
+                                    <div>Server</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons fal fa-camera-home"></i>
+                            <div>Event Check-in</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item">
+                                <a href="Event.html" class="menu-link">
+                                    <div>Event</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+            <div class="layout-page">
+                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                    id="layout-navbar">
+                    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0   d-xl-none ">
+                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                            <i class="ti ti-menu-2 ti-sm"></i>
+                        </a>
+                    </div>
+                    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                        <!-- Search -->
+                        <div class="navbar-nav align-items-center">
+                            <div class="nav-item navbar-search-wrapper mb-0">
+                                <!-- Search Small Screens -->
+                                <div class="navbar-search-wrapper search-input-wrapper">
+                                    <i class="ti ti-search ti-md me-2"></i>
+                                    <input type="text" class="form-control search-input container-xxl border-0"
+                                        placeholder="Search..." aria-label="Search...">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Search -->
+                        <ul class="navbar-nav flex-row align-items-center ms-auto">
+                            <!-- User -->
+                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
+                                    data-bs-toggle="dropdown">
+                                    <div class="avatar avatar-online">
+                                        <img src="assets/images/1.png" alt="" class="h-auto rounded-circle">
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a class="dropdown-item" href="pages-account-settings-account.html">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <div class="avatar avatar-online">
+                                                        <img src="assets/images/1.png" alt=""
+                                                            class="h-auto rounded-circle">
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <span class="fw-medium d-block">Timmerman</span>
+                                                    <small class="text-muted">Admin</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="pages-profile-user.html">
+                                            <i class="ti ti-user-check me-2 ti-sm"></i>
+                                            <span class="align-middle">My Profile</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="pages-account-settings-account.html">
+                                            <i class="ti ti-settings me-2 ti-sm"></i>
+                                            <span class="align-middle">Settings</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="pages-account-settings-billing.html">
+                                            <span class="d-flex align-items-center align-middle">
+                                                <i class="flex-shrink-0 ti ti-credit-card me-2 ti-sm"></i>
+                                                <span class="flex-grow-1 align-middle">Billing</span>
+                                                <span
+                                                    class="flex-shrink-0 badge badge-center rounded-pill bg-label-danger w-px-20 h-px-20">2</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="auth-login-cover.html" target="_blank">
+                                            <i class="ti ti-logout me-2 ti-sm"></i>
+                                            <span class="align-middle">Log Out</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--/ User -->
+                        </ul>
+                    </div>
+                </nav>
+                <div class="content-wrapper">
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <h4 class="py-3 mb-4">
+                            <span class="text-muted fw-light">E-Signature Authenticator /</span> Envelope
+                        </h4>
+                        <div class="row">
+                            <div class="col-sm-6 col-lg-3 mb-4">
+                              <div class="card card-border-shadow-primary">
+                                <div class="card-body">
+                                  <div class="d-flex align-items-center mb-2 pb-1">
+                                    <div class="avatar me-2">
+                                      <span class="avatar-initial rounded bg-label-primary"><i class="ti ti-mail ti-md"></i></span>
+                                    </div>
+                                    <h4 class="ms-1 mb-0">42</h4>
+                                  </div>
+                                  <p class="mb-1">Envelopes</p>
+                                  <p class="mb-0">
+                                    <span class="fw-medium me-1">+18.2%</span>
+                                    <small class="text-muted">than last week</small>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="d-flex justify-between align-center pr-3 mb-4">
+                                <h5 class="card-header">Envelopes</h5>
+                                <button  data-bs-toggle="modal" data-bs-target="#basicModal" class="btn  add-new btn-primary ms-2 ms-sm-0">
+                                    <span>
+                                        <i class="ti ti-plus me-0 me-sm-1 ti-xs"></i>
+                                        <span class="d-none d-sm-inline-block">Add New Envelope</span>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="card-datatable table-responsive">
+                                <table id="dataTables" class="dt-multilingual table">
+                                    <thead>
+										<th>Title</th>
+										<th>Type</th>
+										<th>STATUS</th>
+										<th>Documents</th>
+                                        <th>Created At</th>
+                                        <th>Publish at</th>
+                                        <th>Close at</th>
+                                        <th>Action</th>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<div class="document-name">
+													<a href="#" class="text-gray-5">
+													    <span>Budget estimate 12 - 01 - 2022 </span>
+                                                    </a>
+												</div>
+											</td>
+											<td>
+												<span>Real Estate</span>
+											</td>
+											<td>
+												<span>Draff</span>
+											</td>
+                                            <th>1</th>
+                                            <th>Aug 29, 2023</th>
+                                            <th>Aug 29, 2023</th>
+                                            <th>Aug 30, 2023</th>
+											<td>
+												<div class="dropdown ms-auto">
+													<a href="#" data-bs-toggle="dropdown" class="btn btn-floating" aria-haspopup="true" aria-expanded="false"> <i class="fal fa-ellipsis-h"></i> </a>
+													<div class="dropdown-menu dropdown-menu-end" style="margin: 0px;">
+														<a href="Envelope-View.html" class="dropdown-item">View</a>
+														<a href="Envelope-Edit.html" class="dropdown-item">Edit</a>
+														<a href="#" class="dropdown-item ">Publish</a>
+                                                        <a href="#" class="dropdown-item remove-envelope" >Delete</a>
+													</div>
+												</div>
+											</td>
+										</tr>
+                                        <tr>
+											<td>
+												<div class="document-name">
+													<a href="#" class="text-gray-5">
+													    <span>Budget estimate 12 - 01 - 2022 </span>
+                                                    </a>
+												</div>
+											</td>
+											<td>
+												<span>Real Estate</span>
+											</td>
+											<td>
+												<span>Draff</span>
+											</td>
+                                            <th>1</th>
+                                            <th>Aug 29, 2023</th>
+                                            <th>Aug 29, 2023</th>
+                                            <th>Aug 30, 2023</th>
+											<td>
+												<div class="dropdown ms-auto">
+													<a href="#" data-bs-toggle="dropdown" class="btn btn-floating" aria-haspopup="true" aria-expanded="false"> <i class="fal fa-ellipsis-h"></i> </a>
+													<div class="dropdown-menu dropdown-menu-end" style="margin: 0px;">
+														<a href="Envelope-View.html" class="dropdown-item">View</a>
+														<a href="Envelope-Edit.html" class="dropdown-item">Edit</a>
+														<a href="#" class="dropdown-item ">Publish</a>
+                                                        <a href="#" class="dropdown-item remove-envelope" >Delete</a>
+													</div>
+												</div>
+											</td>
+										</tr>
+                                        <tr>
+											<td>
+												<div class="document-name">
+													<a href="#" class="text-gray-5">
+													    <span>Budget estimate 12 - 01 - 2022 </span>
+                                                    </a>
+												</div>
+											</td>
+											<td>
+												<span>Real Estate</span>
+											</td>
+											<td>
+												<span>Draff</span>
+											</td>
+                                            <th>1</th>
+                                            <th>Aug 29, 2023</th>
+                                            <th>Aug 29, 2023</th>
+                                            <th>Aug 30, 2023</th>
+											<td>
+												<div class="dropdown ms-auto">
+													<a href="#" data-bs-toggle="dropdown" class="btn btn-floating" aria-haspopup="true" aria-expanded="false"> <i class="fal fa-ellipsis-h"></i> </a>
+													<div class="dropdown-menu dropdown-menu-end" style="margin: 0px;">
+														<a href="Envelope-View.html" class="dropdown-item">View</a>
+														<a href="Envelope-Edit.html" class="dropdown-item">Edit</a>
+														<a href="#" class="dropdown-item ">Publish</a>
+                                                        <a href="#" class="dropdown-item remove-envelope" >Delete</a>
+													</div>
+												</div>
+											</td>
+										</tr>
+                                        <tr>
+											<td>
+												<div class="document-name">
+													<a href="#" class="text-gray-5">
+													    <span>Budget estimate 12 - 01 - 2022 </span>
+                                                    </a>
+												</div>
+											</td>
+											<td>
+												<span>Real Estate</span>
+											</td>
+											<td>
+												<span>Draff</span>
+											</td>
+                                            <th>1</th>
+                                            <th>Aug 29, 2023</th>
+                                            <th>Aug 29, 2023</th>
+                                            <th>Aug 30, 2023</th>
+											<td>
+												<div class="dropdown ms-auto">
+													<a href="#" data-bs-toggle="dropdown" class="btn btn-floating" aria-haspopup="true" aria-expanded="false"> <i class="fal fa-ellipsis-h"></i> </a>
+													<div class="dropdown-menu dropdown-menu-end" style="margin: 0px;">
+														<a href="Envelope-View.html" class="dropdown-item">View</a>
+														<a href="Envelope-Edit.html" class="dropdown-item">Edit</a>
+														<a href="#" class="dropdown-item ">Publish</a>
+                                                        <a href="#" class="dropdown-item remove-envelope" >Delete</a>
+													</div>
+												</div>
+											</td>
+										</tr>
+                                        <tr>
+											<td>
+												<div class="document-name">
+													<a href="#" class="text-gray-5">
+													    <span>Budget estimate 12 - 01 - 2022 </span>
+                                                    </a>
+												</div>
+											</td>
+											<td>
+												<span>Real Estate</span>
+											</td>
+											<td>
+												<span>Draff</span>
+											</td>
+                                            <th>1</th>
+                                            <th>Aug 29, 2023</th>
+                                            <th>Aug 29, 2023</th>
+                                            <th>Aug 30, 2023</th>
+											<td>
+												<div class="dropdown ms-auto">
+													<a href="#" data-bs-toggle="dropdown" class="btn btn-floating" aria-haspopup="true" aria-expanded="false"> <i class="fal fa-ellipsis-h"></i> </a>
+													<div class="dropdown-menu dropdown-menu-end" style="margin: 0px;">
+														<a href="Envelope-View.html" class="dropdown-item">View</a>
+														<a href="Envelope-Edit.html" class="dropdown-item">Edit</a>
+														<a href="#" class="dropdown-item ">Publish</a>
+                                                        <a href="#" class="dropdown-item remove-envelope" >Delete</a>
+													</div>
+												</div>
+											</td>
+										</tr>
+                                        <tr>
+											<td>
+												<div class="document-name">
+													<a href="#" class="text-gray-5">
+													    <span>Budget estimate 12 - 01 - 2022 </span>
+                                                    </a>
+												</div>
+											</td>
+											<td>
+												<span>Real Estate</span>
+											</td>
+											<td>
+												<span>Draff</span>
+											</td>
+                                            <th>1</th>
+                                            <th>Aug 29, 2023</th>
+                                            <th>Aug 29, 2023</th>
+                                            <th>Aug 30, 2023</th>
+											<td>
+												<div class="dropdown ms-auto">
+													<a href="#" data-bs-toggle="dropdown" class="btn btn-floating" aria-haspopup="true" aria-expanded="false"> <i class="fal fa-ellipsis-h"></i> </a>
+													<div class="dropdown-menu dropdown-menu-end" style="margin: 0px;">
+														<a href="Envelope-View.html" class="dropdown-item">View</a>
+														<a href="Envelope-Edit.html" class="dropdown-item">Edit</a>
+														<a href="#" class="dropdown-item ">Publish</a>
+                                                        <a href="#" class="dropdown-item remove-envelope" >Delete</a>
+													</div>
+												</div>
+											</td>
+										</tr>
+                                        <tr>
+											<td>
+												<div class="document-name">
+													<a href="#" class="text-gray-5">
+													    <span>Budget estimate 12 - 01 - 2022 </span>
+                                                    </a>
+												</div>
+											</td>
+											<td>
+												<span>Real Estate</span>
+											</td>
+											<td>
+												<span>Draff</span>
+											</td>
+                                            <th>1</th>
+                                            <th>Aug 29, 2023</th>
+                                            <th>Aug 29, 2023</th>
+                                            <th>Aug 30, 2023</th>
+											<td>
+												<div class="dropdown ms-auto">
+													<a href="#" data-bs-toggle="dropdown" class="btn btn-floating" aria-haspopup="true" aria-expanded="false"> <i class="fal fa-ellipsis-h"></i> </a>
+													<div class="dropdown-menu dropdown-menu-end" style="margin: 0px;">
+														<a href="Envelope-View.html" class="dropdown-item">View</a>
+														<a href="Envelope-Edit.html" class="dropdown-item">Edit</a>
+														<a href="#" class="dropdown-item ">Publish</a>
+                                                        <a href="#" class="dropdown-item remove-envelope" >Delete</a>
+													</div>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="basicModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel1">Create Title Envelope</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col mb-3">
+                  <label for="nameBasic" class="form-label">Envelope Title</label>
+                  <input type="text" id="nameBasic" class="form-control" placeholder="Enter Name">
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Close</button>
+              <a href="Envelope-Edit.html" class="btn btn-primary">Save</a>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Core JS -->
+    <script type="text/javascript"  src="assets/js/jquery.js"></script>
+    <script type="text/javascript"  src="assets/js/popper.js"></script>
+    <script type="text/javascript"  src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript"  src="assets/js/menu.js"></script>
+
+    <!-- Main JS -->
+    <script type="text/javascript"  src="assets/js/main.js"></script>
+
+    <!-- Page JS -->
+    
+    <script type="text/javascript"  src="assets/vendor/libs/dataTables/jquery.dataTables.min.js"></script>
+	<script type="text/javascript"  src="assets/vendor/libs/dataTables/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript"  src="assets/vendor/libs/bootstrap-select/bootstrap-select.js"></script>
+    <script type="text/javascript"  src="assets/vendor/libs/sweetalert2/sweetalert2.js"></script>
+    <script type="text/javascript"  src="assets/vendor/libs/dropzone/dropzone.js"></script>
+    <script type="text/javascript"  src="assets/vendor/libs/dropzone/forms-file-upload.js"></script>
+
+
+    <script>
+        $(document).ready(function(){
+            $('#dataTables').DataTable({
+                searching: false, 
+                paging: false
+            });
+            $(".remove-envelope").click(function () {
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "Are you sure you want to remove document Test from the envelope?",
+                    icon: "warning",
+                    showCancelButton: !0,
+                    confirmButtonText: "Yes, delete it!",
+                    customClass: { confirmButton: "btn btn-primary me-3", cancelButton: "btn btn-label-secondary" },
+                    buttonsStyling: !1,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                        )
+                    } else if (
+                        result.dismiss === Swal.DismissReason.cancel
+                    ) {
+                        Swal.fire(
+                        'Cancelled',
+                        'Your imaginary file is safe :)',
+                        'error'
+                        )
+                };
+            });
+        });
+    });
+    </script>
+</body>
+
+</html>

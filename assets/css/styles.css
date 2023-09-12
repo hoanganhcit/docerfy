@@ -1,0 +1,518 @@
+body {
+    background: #f8f7fa;
+}
+
+.light-style .menu .app-brand.demo {
+    height: 64px;
+}
+
+.dark-style .menu .app-brand.demo {
+    height: 64px;
+}
+
+.app-brand-logo.demo {
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.app-brand-text.demo {
+    font-size: 1.375rem;
+}
+
+/* ! For .layout-navbar-fixed added fix padding top tpo .layout-page */
+.layout-navbar-fixed .layout-wrapper:not(.layout-without-menu) .layout-page {
+    padding-top: 64px !important;
+}
+
+.layout-navbar-fixed .layout-wrapper:not(.layout-horizontal):not(.layout-without-menu) .layout-page {
+    padding-top: 78px !important;
+}
+
+/* Navbar page z-index issue solution */
+.content-wrapper .navbar {
+    z-index: auto;
+}
+
+/*
+  * Content
+  ******************************************************************************/
+
+.demo-blocks>* {
+    display: block !important;
+}
+
+.demo-inline-spacing>* {
+    margin: 1rem 0.375rem 0 0 !important;
+}
+
+/* ? .demo-vertical-spacing class is used to have vertical margins between elements. To remove margin-top from the first-child, use .demo-only-element class with .demo-vertical-spacing class. For example, we have used this class in forms-input-groups.html file. */
+.demo-vertical-spacing>* {
+    margin-top: 1rem !important;
+    margin-bottom: 0 !important;
+}
+
+.demo-vertical-spacing.demo-only-element> :first-child {
+    margin-top: 0 !important;
+}
+
+.demo-vertical-spacing-lg>* {
+    margin-top: 1.875rem !important;
+    margin-bottom: 0 !important;
+}
+
+.demo-vertical-spacing-lg.demo-only-element> :first-child {
+    margin-top: 0 !important;
+}
+
+.demo-vertical-spacing-xl>* {
+    margin-top: 5rem !important;
+    margin-bottom: 0 !important;
+}
+
+.demo-vertical-spacing-xl.demo-only-element> :first-child {
+    margin-top: 0 !important;
+}
+
+.rtl-only {
+    display: none !important;
+    text-align: left !important;
+    direction: ltr !important;
+}
+
+[dir='rtl'] .rtl-only {
+    display: block !important;
+}
+
+/* Dropdown buttons going out of small screens */
+@media (max-width: 576px) {
+    #dropdown-variation-demo .btn-group .text-truncate {
+        width: 254px;
+        position: relative;
+    }
+
+    #dropdown-variation-demo .btn-group .text-truncate::after {
+        position: absolute;
+        top: 45%;
+        right: 0.65rem;
+    }
+}
+
+/*
+  * Layout demo
+  ******************************************************************************/
+
+.layout-demo-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.layout-demo-placeholder img {
+    width: 900px;
+}
+
+.layout-demo-info {
+    text-align: center;
+    margin-top: 1rem;
+}
+.navbar-search-wrapper {
+    display: flex;
+    align-items: center;
+}
+.mr-1 {
+    margin-right: 0.5em;
+}
+.text-gray-5 {
+    color: #838383;
+}
+.ml-2 {
+    margin-left: 1rem;
+}
+.align-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+.pr-3 {
+    padding-right: 1.5rem;
+}
+.pl-3 {
+    padding-left: 1.5rem;
+}
+.border-bottom-eee {
+    border-bottom: 1px solid #eee;
+}
+.description_input {
+    font-size: 13px;
+    font-style: italic;
+    margin-top: 10px;
+    color: #9E9E9E;
+}
+.doc_01 {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    /* background-color: #f9f9f9; */
+    border-radius: 4px;
+    align-items: center;
+    min-height: 50px;
+    border: 1px dashed #eee;
+}
+.del {
+    color: #f06045;
+    font-size: 13px;
+    line-height: 22px;
+    font-weight: 400;
+    cursor: pointer;
+}
+.edit-content {
+    border: 1px solid #eee;
+    padding: 1rem;
+    border-radius: 6px;
+    max-height: 500px;
+    overflow: auto;
+}
+
+.ct-body {
+    position: relative;
+}
+
+.sl-docs {
+    position: relative;
+}
+
+.doc-card {
+    position: relative;
+}
+span.num_docs {
+    display: block;
+    font-size: 13px;
+    font-style: italic;
+    color: #9c9c9c;
+}
+.list-doc ul {
+    position: relative;
+    list-style-type: none;
+    padding-left: 3rem;
+}
+.list-doc ul:before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: #e8e8e8;
+    left: 20px;
+}
+.list-doc ul li:after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    background: #eaeaea;
+    position: absolute;
+    top: calc(50% - 6px);
+    left: 15px;
+    border-radius: 20px;
+}
+label {
+    margin-bottom: .25em;
+}
+
+/* Add Question Start */
+
+.dc-create_question {
+    display: block;
+    position: relative;
+    max-height: calc(80vh - 70px);
+    overflow: auto;
+    padding: 1em 0;
+}
+.rectanger {
+    background: #fff;
+    position: relative;
+    border-radius: 6px;
+}
+.dv-top {
+    margin-bottom: 10px;
+}
+.dv-lang {
+    background: #fff;
+    border-radius: 4px;
+    padding: 0 15px;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+.lang-title {
+    margin-right: 10px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+}
+.lang-item {
+    display: inline-flex;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+.flag-lang {
+    margin-right: 5px;
+    line-height: 17px;
+    width: 18px;
+    height: 17px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-flex;
+}
+.en {
+    background-image: url(../images/flag/EN.png);
+}
+.fr {
+    background-image: url(../images/flag/FR.png);
+}
+.vn {
+    background-image: url(../images/flag/VN.png);
+}
+.jp {
+    background-image: url(../images/flag/JP.png);
+}
+.sp {
+    background-image: url(../images/flag/SP.png);
+}
+.add-lang {
+    font-size: 25px;
+    position: absolute;
+    right: 10px;
+    color: #222;
+}
+.select-lang {
+    position: absolute;
+    top: 45px;
+    z-index: 99;
+    background: #fff;
+    width: 150px;
+    right: 0px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+.select-lang li {
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.question-container {
+    position: relative;
+    display: block;
+}
+.card-qs {
+    background-color: #fff;
+    border-radius: 0px;
+    padding: 10px 2rem;
+    margin-bottom: 10px;
+    display: block;
+    position: relative;
+}
+.card-qs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    position: relative;
+}
+.qs-title {
+    display: inline-flex;
+    width: calc(100% - 100px);
+}
+.qs-title input {
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #f6f6f6;
+    border-radius: 4px;
+    height: 45px;
+    padding: 0px 10px;
+    background: #f6f6f6;
+}
+.qs-bookmark {
+    border: 1px solid #dcdcdc;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 3px;
+    background: #fff;
+    border-radius: 3px;
+}
+.qs-bookmark a {
+    margin-left: 3px;
+    display: inline-flex;
+    padding: 5px;
+}
+.equals-list-qs li a.remove, .qs-bookmark a.remove {
+    font-size: 14px;
+}
+.remove {
+    color: #F44336 !important;
+}
+.qs-type {
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+.type-title {
+    display: flex;
+    align-items: center;
+}
+.qs-equals {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.equals-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+.equals-title span:first-child {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+.equals-title span:first-child input {
+    width: 60%;
+    margin: 0;
+    height: 35px;
+    border: 0;
+    margin-left: 10px;
+    background: #f6f6f6;
+    border-radius: 4px;
+    padding: 0px 10px;
+}
+.edit-list-qs {
+    position: absolute;
+    right: 20px;
+    color: #222;
+    font-weight: 500;
+}
+.equals-list-qs {
+    background: transparent;
+    padding: 10px 0px 10px 15px;
+    border-radius: 4px;
+    border: 0;
+}
+.review-qs {
+    position: absolute;
+    right: 10px;
+    top: -45px;
+}
+.pdf-preview {
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    background: #fff;
+    border-radius: 4px;
+    padding: 5px;
+    max-height: 80vh;
+}
+.canvas-container {
+    position: absolute !important;
+    z-index: 10;
+    top: 0;
+}
+
+.equals-list-qs li {
+    padding: 5px 0;
+    list-style-type: decimal;
+    position: relative;
+}
+.option-list .option-group {
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.option-group {
+    position: relative;
+    width: calc(100% - 60px);
+    display: flex;
+}
+.option-group span input {
+    margin-left: 5px;
+    margin: 0;
+    height: 35px;
+    border: 0;
+    margin-left: 10px;
+    background: #f6f6f6;
+    border-radius: 4px;
+    padding: 0px 10px;
+}
+.option-list .option-group span input {
+    width: 75%;
+    margin-left: 10px !important;
+}
+.equals-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+.equals-title span:first-child {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.option-list .option-group span {
+    width: 80% !important;
+    margin-bottom: 10px;
+    justify-content: flex-start;
+    display: flex;
+}
+.type-radio-bookmark {
+    position: absolute;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 3px;
+    background: #f67158;
+    top: 0;
+    right: 0;
+}
+.type-radio-bookmark a {
+    color: #fff !important;
+    display: inline-flex;
+    padding: 5px;
+}
+
+ul.option-panel.option-list {
+    padding: 0;
+    position: relative;
+}
+
+/* End Add Question */

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact" dir="ltr"
+    data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Dashboard - Docerfy</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="">
+    <!-- Canonical SEO -->
+    <link rel="canonical" href="">
+
+    <!-- Favicon -->
+    <link rel="stylesheet" href="assets/css/tabler-icons.css" />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="assets/css/core.css" />
+    <link rel="stylesheet" href="assets/css/theme-default.css" />
+    <link rel="stylesheet" href="assets/css/dataTable.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!-- PAGE CSS -->
+
+    <link rel="stylesheet" href="assets/vendor/libs/bootstrap-select/bootstrap-select.css">
+    <link rel="stylesheet" href="assets/vendor/libs/sweetalert2/sweetalert2.css">
+    <link rel="stylesheet" href="assets/css/dropzone.css">
+
+    <!-- Helpers -->
+    <script src="assets/js/helpers.js"></script>
+    <script src="assets/js/config.js"></script>
+</head>
+
+<body>
+    <div class="layout-wrapper layout-content-navbar  ">
+        <div class="layout-container">
+            <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+                <div class="app-brand demo ">
+                    <a href="dashboard.html" class="app-brand-link">
+                        <span class="app-brand-logo demo">
+                            <img src="assets/images/logo.png" alt="" style="height: 35px;">
+                        </span>
+                    </a>
+                    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
+                        <i class="fal fa-scrubber menu-toggle-icon d-none d-xl-block align-middle"></i>
+                        <i class="fal fal-times d-block d-xl-none align-middle"></i>
+                    </a>
+                </div>
+                <div class="menu-inner-shadow"></div>
+                <ul class="menu-inner py-1">
+                    <li class="menu-item  ">
+                        <a href="Dashboard.html" class="menu-link">
+                            <i class="menu-icon tf-icons fal fa-tachometer-alt"></i>
+                            <div>Dashboard</div>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons fal fa-user-unlock"></i>
+                            <div>Access Authenticator</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item ">
+                                <a href="Documents.html" class="menu-link">
+                                    <div>Documents</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="Media.html" class="menu-link">
+                                    <div>Media</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <div>Google Drive</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <div>Dropbox</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item active open">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons fal fa-signature"></i>
+                            <div>E-Signature</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item ">
+                                <a href="Envelope.html" class="menu-link">
+                                    <div>Envelope</div>
+                                </a>
+                            </li>
+                            <li class="menu-item active">
+                                <a href="Signing-Template.html" class="menu-link">
+                                    <div>Signing Template</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons fal fa-server"></i>
+                            <div>Server Access</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item">
+                                <a href="Server.html" class="menu-link">
+                                    <div>Server</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons fal fa-camera-home"></i>
+                            <div>Event Check-in</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item">
+                                <a href="Event.html" class="menu-link">
+                                    <div>Event</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+            <div class="layout-page">
+                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                    id="layout-navbar">
+                    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0   d-xl-none ">
+                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                            <i class="ti ti-menu-2 ti-sm"></i>
+                        </a>
+                    </div>
+                    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                        <!-- Search -->
+                        <div class="navbar-nav align-items-center">
+                            <div class="nav-item navbar-search-wrapper mb-0">
+                                <!-- Search Small Screens -->
+                                <div class="navbar-search-wrapper search-input-wrapper">
+                                    <i class="ti ti-search ti-md me-2"></i>
+                                    <input type="text" class="form-control"  class="form-control search-input container-xxl border-0"
+                                        placeholder="Search..." aria-label="Search...">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Search -->
+                        <ul class="navbar-nav flex-row align-items-center ms-auto">
+                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
+                                    data-bs-toggle="dropdown">
+                                    <div class="avatar avatar-online">
+                                        <img src="assets/images/1.png" alt="" class="h-auto rounded-circle">
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a class="dropdown-item" href="pages-account-settings-account.html">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <div class="avatar avatar-online">
+                                                        <img src="assets/images/1.png" alt=""
+                                                            class="h-auto rounded-circle">
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <span class="fw-medium d-block">Timmerman</span>
+                                                    <small class="text-muted">Admin</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="pages-profile-user.html">
+                                            <i class="ti ti-user-check me-2 ti-sm"></i>
+                                            <span class="align-middle">My Profile</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="pages-account-settings-account.html">
+                                            <i class="ti ti-settings me-2 ti-sm"></i>
+                                            <span class="align-middle">Settings</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="pages-account-settings-billing.html">
+                                            <span class="d-flex align-items-center align-middle">
+                                                <i class="flex-shrink-0 ti ti-credit-card me-2 ti-sm"></i>
+                                                <span class="flex-grow-1 align-middle">Billing</span>
+                                                <span
+                                                    class="flex-shrink-0 badge badge-center rounded-pill bg-label-danger w-px-20 h-px-20">2</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="auth-login-cover.html" target="_blank">
+                                            <i class="ti ti-logout me-2 ti-sm"></i>
+                                            <span class="align-middle">Log Out</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="content-wrapper">
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <h4 class="py-3 mb-4">
+                            <span class="text-muted fw-light">E-Signature Authenticator /</span>
+                            <span class="text-muted fw-light"> Signing Template /</span>
+                            <span class="text-muted fw-light"> Template Name /</span>  Add Question
+                        </h4> 
+                        <div class="row">
+                            <div class="col col-lg-4 col-sm-4">
+                                <div class="dc-create_question rectanger card">
+                                    <div class="dv-top dv-lang">
+                                        <div class="lang-title">Language : </div>
+                                        <div class="lang-item">
+                                            <span class="flag-lang en"></span>
+                                            <span class="flag-lang fr"></span>
+                                            <span class="flag-lang vn"></span>
+                                        </div>
+                                        <a href="javascript:;" class="add-lang">+</a>
+                                        <div class="select-lang">
+                                            <ul>
+                                                <li>English <span class="flag-lang en"></span></li>
+                                                <li>French <span class="flag-lang fr"></span></li>
+                                                <li>Japanese <span class="flag-lang jp"></span></li>
+                                                <li>Spainish <span class="flag-lang sp"></span></li>
+                                                <li>Vietnamese <span class="flag-lang vn"></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="question-container">
+                                        <div class="card-qs">
+                                            <div class="card-qs-header">
+                                                <div class="qs-title"><input type="text" class="form-control"  value="What is your name?"></div>
+                                                <div class="qs-bookmark">
+                                                     <a href="javascript:;" class="remove fal fa-trash"></a>
+                                                    <a href="#translate-question" class="modal-trigger translate-question tooltipped" data-position="left" data-tooltip="Translate Question"><i class="fal fa-bookmark"></i></a>
+                                                    <a href="javascript:;" class="addrectanger tooltipped" data-position="right" data-tooltip="Edit Bookmark"><i class="fal fa-question-circle"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="qs-type">
+                                                <div class="type-title">Type: Text</div>
+                                            </div>
+                                            <div class="qs-equals">
+                                                <div class="equals-title">
+                                                    <span>If value equals: <input type="text" class="form-control" ></span>
+                                                </div>
+                                                <div style="margin-bottom: 5px">Then Show:
+                                                    <a class="edit-list-qs" href="javascript:;"> Edit</a>
+                                                </div>
+                                                <div class="equals-list-qs">
+                                                    <ul>
+                                                        <li><a href="#">How old are you?</a></li>
+                                                        <li><a href="#">Where are you from?</a></li>
+                                                        <li><a href="#">How do you do?</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-qs">
+                                            <div class="card-qs-header">
+                                                <div class="qs-title"><input type="text" class="form-control"  value="What is your name?"></div>
+                                                <div class="qs-bookmark">
+                                                    <a href="javascript:;" class="addcheckbox tooltipped" data-position="right" data-tooltip="Edit Bookmark"><i class="fal fa-question-circle"></i></a>
+                                                    <a href="#translate-question" class="modal-trigger tooltipped" data-position="left" data-tooltip="Translate Question"><i class="fal fa-bookmark"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="qs-type">
+                                                <div class="type-title">Then Show:</div>
+                                            </div>
+                                            <div class="qs-equals panel-group">
+                                                <div class="panel-default">
+                                                    <div class="equals-title">
+                                                        <span>If choice</span>
+                                                    </div>
+                                                    <div class="equals-list-qs">
+                                                        <a class="modal-trigger edit-list-qs" href="#edit-question"> Edit</a>
+                                                        <ul>
+                                                            <li><a href="#">How old are you?</a></li>
+                                                            <li><a href="#">Where are you from?</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="panel-default">
+                                                    <div class="equals-title">
+                                                        <span>If not choice</span>
+                                                    </div>
+                                                    <div class="equals-list-qs">
+                                                        <a class="modal-trigger edit-list-qs" href="#edit-question"> Edit</a>
+                                                        <ul>
+                                                            <li><a href="#">How old are you?</a></li>
+                                                            <li><a href="#">Where are you from?</a></li>
+                                                            <li><a href="#">How do you do?</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="qs-equals panel-group">
+                                                <div class="panel-default">
+                                                    <div class="equals-title">
+                                                        <span>Options:</span>
+                                                        <a href="#add_options" class="modal-trigger add-options fal fa-plus"></a>
+                                                    </div>
+                                                    <div class="equals-list-qs">
+                                                        <ul class="option-panel option-list">
+                                                            <li>
+                                                                <div class="option-group equals-title"">
+                                                                    <span>Label: <input type="text" class="form-control" ></span>
+                                                                    <span>Value: <input type="text" class="form-control" ></span>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="option-group equals-title"">
+                                                                    <span>Label: <input type="text" class="form-control" ></span>
+                                                                    <span>Value: <input type="text" class="form-control" ></span>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-qs">
+                                            <div class="card-qs-header">
+                                                <div class="qs-title"><input type="text" class="form-control"  value="What is your name?"></div>
+                                                <div class="qs-bookmark">
+                                                    <a href="javascript:;" class="addradio tooltipped" data-position="right" data-tooltip="Edit Bookmark"><i class="fal fa-question-circle"></i></a>
+                                                    <a href="#translate-question" class="modal-trigger tooltipped" data-position="left" data-tooltip="Translate Question"><i class="fal fa-bookmark"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="qs-type">
+                                                <div class="type-title">Type: Radio</div>
+                                            </div>
+                                            <div class="qs-equals panel-group">
+                                                <div class="panel-default">
+                                                    <div class="equals-title">
+                                                        <span>If value equals: "" <input type="text" class="form-control" ></span>
+                                                    </div>
+                                                    <div class="equals-list-qs">
+                                                        <a class="modal-trigger edit-list-qs" href="#edit-question"> Edit</a>
+                                                        <ul>
+                                                            <li>How old are you?</li>
+                                                            <li>Where are you from?</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="qs-equals panel-group">
+                                                <div class="panel-default">
+                                                    <div class="equals-title">
+                                                        <span>Options:</span>
+                                                        <a href="#add_options" class="modal-trigger add-options fal fa-plus"></a>
+                                                    </div>
+                                                    <div class="equals-list-qs">
+                                                        <ul class="option-panel option-list">
+                                                            <li>
+                                                                <div class="option-group">
+                                                                    <span>Label: <input type="text" class="form-control" ></span>
+                                                                    <span>Value: <input type="text" class="form-control" ></span>
+                                                                </div>
+                                                                <div class="type-radio-bookmark">
+                                                                     <a href="javascript:;" class="remove fal fa-trash"></a>
+                                                                    <a href="javascript:;" class="addradio tooltipped" data-position="right" data-tooltip="Edit Bookmark"><i class="fal fa-question-circle"></i></a>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="option-group">
+                                                                    <span>Label: <input type="text" class="form-control" ></span>
+                                                                    <span>Value: <input type="text" class="form-control" ></span>
+                                                                </div>
+                                                                <div class="type-radio-bookmark">
+                                                                     <a href="javascript:;" class="remove fal fa-trash"></a>
+                                                                    <a href="javascript:;" class="addradio tooltipped" data-position="right" data-tooltip="Edit Bookmark"><i class="fal fa-question-circle"></i></a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-qs">
+                                            <div class="card-qs-header">
+                                                <div class="qs-title"><input type="text" class="form-control"  value="What is your name?"></div>
+                                                <div class="qs-bookmark">
+                                                    <a href="javascript:;" class="addrectanger tooltipped" data-position="right" data-tooltip="Edit Bookmark"><i class="fal fa-bookmark"></i></a>
+                                                    <a href="#translate-question" class="modal-trigger tooltipped" data-position="left" data-tooltip="Translate Question"><i class="fal fa-question-circle"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="qs-type">
+                                                <div class="type-title">Type: Select</div>
+                                            </div>
+                                            <div class="qs-equals panel-group">
+                                                <div class="panel-default">
+                                                    <div class="equals-title">
+                                                        <span>If value equals: "" <input type="text" class="form-control" ></span>
+                                                    </div>
+                                                    <div class="equals-list-qs">
+                                                        <a class="modal-trigger edit-list-qs" href="#edit-question"> Edit</a>
+                                                        <ul>
+                                                            <li>How old are you?</li>
+                                                            <li>Where are you from?</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="qs-equals panel-group">
+                                                <div class="panel-default">
+                                                    <div class="equals-title">
+                                                        <span>Options:</span>
+                                                        <a href="#add_options" class="modal-trigger add-options fal fa-plus"></a>
+                                                    </div>
+                                                    <div class="equals-list-qs">
+                                                        <ul class="option-panel option-list">
+                                                            <li>
+                                                                <div class="option-group">
+                                                                    <span>Label: <input type="text" class="form-control" ></span>
+                                                                    <span>Value: <input type="text" class="form-control" ></span>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="option-group">
+                                                                    <span>Label: <input type="text" class="form-control" ></span>
+                                                                    <span>Value: <input type="text" class="form-control" ></span>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="margin-top: 20px;display: flex;align-items: center;justify-content: space-between;">
+                                    <button class="btn btn-primary">Complete</button>
+                                    <a class="btn btn-danger modal-trigger" href="#create_question">Create Question</a>
+                                </div>
+                            </div>
+                            <div class="col col-sm-8 col-lg-8">
+                                <div class="review-qs"><a href="#preview_question" class="modal-trigger waves-effect waves-light btn gd-blue">Review</a></div>
+                                <div class="pdf-preview card">
+                                    <img src="assets/images/pdf/pdf_1.png" id="pdf_1">
+                                    <img src="assets/images/pdf/pdf_2.png" id="pdf_2">
+                                    <img src="assets/images/pdf/pdf_3.png" id="pdf_3">
+                                    <img src="assets/images/pdf/pdf_4.png" id="pdf_4">
+                                    <img src="assets/images/pdf/pdf_5.png" id="pdf_5">
+                                    <img src="assets/images/pdf/pdf_6.png" id="pdf_6">
+                                    <img src="assets/images/pdf/pdf_7.png" id="pdf_7">
+                                    <canvas id="file-img"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="basicModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel1">Create Title Envelope</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label for="nameBasic" class="form-label">Envelope Title</label>
+                            <input type="text" class="form-control"  id="nameBasic" class="form-control" placeholder="Enter Name">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="Envelope-Edit.html" class="btn btn-primary">Save</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core JS -->
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/popper.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="assets/js/menu.js"></script>
+
+    <!-- Main JS -->
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+    <!-- Page JS -->
+
+    <script type="text/javascript" src="assets/js/fabric.js"></script>
+
+
+	<script>
+		$( function() {
+			$('.dropdown-trigger').dropdown();
+			// $( "ul.droptrue" ).sortable({
+			// 	connectWith: "ul"
+			// });
+
+			// $( "ul.dropfalse" ).sortable({
+			// 	connectWith: "ul",
+			// 	dropOnEmpty: false
+			// });
+
+			$('.checkbox-slt').click(function() {
+				$('.checkbox_options').show();
+			});
+
+			$('.edit-list-qs').click(function() {
+				$('.modal-edit-question').show();
+			});
+			$('.q-gr').click(function() {
+				$('.q-gr').removeClass('active');
+				$(this).addClass('active');
+			});
+
+			$('.translate-question').click(function(){
+				$('#translate_1').appendTo("#translate");
+			});
+			// $( "#select_question, #all_question" ).disableSelection(); 
+
+		});
+
+		$(document).ready(function() {
+
+			var canvas = new fabric.Canvas('file-img');
+			var json = '{"objects":[{"type":"rect","left":100,"top":100,"width":120,"height":30,"fill":"#ffe1e1","id":"doc_1"}]}'
+
+			canvas.loadFromJSON(json, canvas.renderAll.bind(canvas), function(object) {
+				fabric.log(object);
+			});
+
+			var height_pdf = $('#pdf_1').height() + $('#pdf_2').height() + $('#pdf_3').height() + $('#pdf_4').height() + $('#pdf_5').height() + $('#pdf_6').height() + $('#pdf_7').height();
+
+			var width_pdf = $('.pdf-preview img').width();
+
+			canvas.setHeight(height_pdf);
+			canvas.setWidth(width_pdf);
+
+			fabric.Object.prototype.set({
+				transparentCorners: false,
+				cornerColor: 'tomato',
+				cornerSize: 5
+			});
+
+			function objectAddedListener(ev) {
+				let target = ev.target;
+				console.log('left', target.left, 'top', target.top, 'width', target.width * target.scaleX, 'height', target.height, 'id', target.id);
+				canvas.includeDefaultValues = false;
+				fabric.log('JSON: ', canvas.toJSON(['id']));
+			}
+
+			function objectMovedListener(ev) {
+				let target = ev.target;
+				console.log('left', target.left, 'top', target.top, 'width', target.width * target.scaleX, 'height', target.height * target.scaleY, 'id', target.id);
+				canvas.includeDefaultValues = false;
+				fabric.log('JSON: ', canvas.toJSON(['id']));
+			}
+
+			canvas.on('object:added', objectAddedListener);
+			canvas.on('object:modified', objectMovedListener);
+
+
+			$('.addrectanger').click(function(){
+				var rect = new fabric.Rect({
+					width: 120, height: 30, fill: '#ffe1e1', top: 100, left: 100 });
+				canvas.add(rect);
+			});
+			$('.addcheckbox').click(function(){
+				var checkbox_rect = new fabric.Rect({
+					width: 30, height: 30, fill: '#ff6347', top: 100, left: 100 });
+				canvas.add(checkbox_rect);
+			});
+			$('.addradio').click(function(){
+				var radio_circle = new fabric.Circle({
+					radius: 30, fill: '#8BC34A', top: 100, left: 100 });
+				canvas.add(radio_circle);
+			});
+
+			$('.add-lang').click(function(){
+				$('.select-lang').slideToggle();
+			});
+
+		});
+
+	</script>
+</body>
+
+</html>
