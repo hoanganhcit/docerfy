@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact" dir="ltr" data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template">
+<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact" dir="ltr"
+    data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template">
 
 <head>
     <meta charset="utf-8" />
@@ -13,8 +14,7 @@
 
     <!-- Favicon -->
     <link rel="stylesheet" href="assets/css/tabler-icons.css" />
-    <link rel="icon" type="image/x-icon"
-        href="assets/images/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
@@ -229,29 +229,32 @@
                         </h4>
                         <div class="mb-4">
                             <div class="card">
-                              <h5 class="card-header">Upload Document & Start Authenticate</h5>
-                              <div class="card-body">
-                                <div class="row folder-create-auto d-none">
-                                    <div class="col-md-4">
-                                        <div class="mb-3">
-                                            <div class="h6 mb-2">Create Folder</div>
-                                            <div class="d-flex">
-                                                <input type="text" class="form-control" placeholder="Folder Name">
-                                                <button type="submit" class="btn btn-primary waves-effect waves-light ml-2">Create</button>
+                                <h5 class="card-header">Upload Document & Start Authenticate</h5>
+                                <div class="card-body">
+                                    <div class="row folder-create-auto d-none">
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <div class="h6 mb-2">Create Folder</div>
+                                                <div class="d-flex">
+                                                    <input type="text" class="form-control" placeholder="Folder Name">
+                                                    <button type="submit"
+                                                        class="btn btn-primary waves-effect waves-light ml-2">Create</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <form action="https://docerfy.com/upload-file" class="dropzone needsclick"
+                                        id="dropzone-multi">
+                                        <div class="dz-message needsclick">
+                                            Drop files here or click to upload
+                                            <span class="note needsclick">(Selected files are <span
+                                                    class="fw-medium">not</span> actually uploaded.)</span>
+                                        </div>
+                                        <div class="fallback">
+                                            <input name="file" type="file" id="upload_file" multiple />
+                                        </div>
+                                    </form>
                                 </div>
-                                <form action="https://docerfy.com/upload-file" class="dropzone needsclick" id="dropzone-multi">
-                                  <div class="dz-message needsclick">
-                                    Drop files here or click to upload
-                                    <span class="note needsclick">(Selected files are <span class="fw-medium">not</span> actually uploaded.)</span>
-                                  </div>
-                                  <div class="fallback">
-                                    <input name="file" type="file" id="upload_file" multiple/>
-                                  </div>
-                                </form>
-                              </div>
                             </div>
                         </div>
                         <div class="card">
@@ -259,76 +262,80 @@
                             <div class="card-datatable table-responsive">
                                 <table id="dataTables" class="dt-multilingual table">
                                     <thead>
-										<th>NAME</th>
-										<th>Created At</th>
-										<th>STATUS</th>
-										<th>Access</th>
+                                        <th>NAME</th>
+                                        <th>Created At</th>
+                                        <th>STATUS</th>
+                                        <th>Access</th>
                                         <th>Successfully Access</th>
                                         <th>Denied Access</th>
                                         <th>Action</th>
-									</thead>
-									<tbody>
-										<tr>
-											<td>
-												<div class="document-name">
-													<a href="#" class="text-gray-5">
-                                                        <i class="fal fa-file-alt text-warning mr-1"></i>
-													    <span>Budget estimate 12 - 01 - 2022 </span>
-                                                    </a>
-												</div>
-											</td>
-											<td>
-												<span>Jul 04, 2023</span>
-											</td>
-											<td>
-												<a href="#" class="text-success bold text-success">Already</a>
-											</td>
-                                            <th>0</th>
-                                            <th>0</th>
-                                            <th>0</th>
-											<td>
-												<div class="dropdown ms-auto">
-													<a href="#" data-bs-toggle="dropdown" class="btn btn-floating" aria-haspopup="true" aria-expanded="false"> <i class="fal fa-ellipsis-h"></i> </a>
-													<div class="dropdown-menu dropdown-menu-end" style="margin: 0px;">
-														<a href="#" class="dropdown-item">Delete</a>
-														<a href="#" class="dropdown-item">Edit</a>
-														<a href="#" class="dropdown-item ">Link</a>
-                                                        <a href="#" class="dropdown-item ">Mail</a>
-													</div>
-												</div>
-											</td>
-										</tr>
+                                    </thead>
+                                    <tbody>
                                         <tr>
-											<td>
-												<div class="document-name">
-													<a href="#" class="text-gray-5">
+                                            <td>
+                                                <div class="document-name">
+                                                    <a href="#" class="text-gray-5">
                                                         <i class="fal fa-file-alt text-warning mr-1"></i>
-													    <span>Budget estimate 12 - 01 - 2022 </span>
+                                                        <span>Budget estimate 12 - 01 - 2022 </span>
                                                     </a>
-												</div>
-											</td>
-											<td>
-												<span>Jul 04, 2023</span>
-											</td>
-											<td>
-												<a href="#" class="text-success bold text-warning">Pending</a>
-											</td>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span>Jul 04, 2023</span>
+                                            </td>
+                                            <td>
+                                                <a href="#" class="text-success bold text-success">Already</a>
+                                            </td>
                                             <th>0</th>
                                             <th>0</th>
                                             <th>0</th>
-											<td>
-												<div class="dropdown ms-auto">
-													<a href="#" data-bs-toggle="dropdown" class="btn btn-floating" aria-haspopup="true" aria-expanded="false"> <i class="fal fa-ellipsis-h"></i> </a>
-													<div class="dropdown-menu dropdown-menu-end" style="margin: 0px;">
-														<a href="#" class="dropdown-item">Delete</a>
-														<a href="#" class="dropdown-item">Edit</a>
-														<a href="#" class="dropdown-item ">Link</a>
-                                                        <a href="#" class="dropdown-item ">Mail</a>
-													</div>
-												</div>
-											</td>
-										</tr>
-									</tbody>
+                                            <td>
+                                                <div class="dropdown ms-auto">
+                                                    <a href="#" data-bs-toggle="dropdown" class="btn btn-floating"
+                                                        aria-haspopup="true" aria-expanded="false"> <i
+                                                            class="fal fa-ellipsis-h"></i> </a>
+                                                    <div class="dropdown-menu dropdown-menu-end" style="margin: 0px;">
+                                                        <a href="#" class="dropdown-item">Edit</a>
+                                                        <a href="#" class="dropdown-item " data-bs-toggle="modal"
+                                                            data-bs-target="#modalAuthenticate">Authenticate</a>
+                                                        <a href="#" class="dropdown-item">Delete</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="document-name">
+                                                    <a href="#" class="text-gray-5">
+                                                        <i class="fal fa-file-alt text-warning mr-1"></i>
+                                                        <span>Budget estimate 12 - 01 - 2022 </span>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span>Jul 04, 2023</span>
+                                            </td>
+                                            <td>
+                                                <a href="#" class="text-success bold text-warning">Pending</a>
+                                            </td>
+                                            <th>0</th>
+                                            <th>0</th>
+                                            <th>0</th>
+                                            <td>
+                                                <div class="dropdown ms-auto">
+                                                    <a href="#" data-bs-toggle="dropdown" class="btn btn-floating"
+                                                        aria-haspopup="true" aria-expanded="false"> <i
+                                                            class="fal fa-ellipsis-h"></i> </a>
+                                                    <div class="dropdown-menu dropdown-menu-end" style="margin: 0px;">
+                                                        <a href="#" class="dropdown-item">Edit</a>
+                                                        <a href="#" class="dropdown-item " data-bs-toggle="modal"
+                                                            data-bs-target="#modalAuthenticate">Authenticate</a>
+                                                        <a href="#" class="dropdown-item">Delete</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -337,27 +344,160 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="modalAuthenticate" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <form id="form_setup_authenticate" action="/authenticator/documents/422/update_authenticate_item" method="post" data-remote="true">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col mb-3">
+                                    <div class="v-header px-4 py-4">
+                                        <div class="v-text-title mb-2">
+                                            Please select the following methods to authenticate access to your Digital Assets:
+                                            <br>
+                                            <b>lkso.2.xlsx</b>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label for="">Re-authenticate time (minutes)</label>
+                                                    <input name="reauthenticate_time" type="number" class="form-control" min="5"
+                                                        max="180" value="20">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="">Permanent delete (days)</label>
+                                                    <input name="permanent_delete" type="number" class="form-control" min="1"
+                                                        max="30" value="5">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="v-radio-method my-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input method-verify" type="radio"
+                                                    value="face_recognition" name="authenticate_type" id="faceRecognition"
+                                                    checked="">
+                                                <label class="form-check-label" for="faceRecognition">
+                                                    Face Recognition
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input method-verify" type="radio" value="sms_code"
+                                                    name="authenticate_type" id="smsCode">
+                                                <label class="form-check-label" for="smsCode">
+                                                    SMS Code
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="v-content">
+                                            <div class="v-face-content" style="display: block;">
+                                                <div class="form-check form-switch mb-3">
+                                                    <input class="form-check-input switch-upload-photo" type="checkbox"
+                                                        role="switch" id="uploadFacePhoto">
+                                                    <input type="hidden" name="face_available" value="1">
+                                                    <label class="form-check-label" for="uploadFacePhoto">I want automatic
+                                                        authenticate access by facial recognition</label>
+                                                </div>
+                                                <div class="form-group upload-photo-content" style="display: none;">
+                                                    <div class="upload-photo-box py-4">
+                                                        <i class="fas fa-cloud-upload"></i>
+                                                        <p class="mt-2">Drag&amp;Drop or Upload face image for all your access
+                                                            user</p>
+                                                        <input id="face_images" type="file" class="file-hidden" multiple=""
+                                                            accept="image/png, image/gif, image/jpeg">
+                                                    </div>
+                                                    <label id="label_error_face_images" class="error"
+                                                        style="display: none;">Please select at least one image</label>
+                                                        <div class="preview-photos">
+                                                            <img src="assets/images/1.png" alt="">
+                                                            <img src="assets/images/1.png" alt="">
+                                                            <img src="assets/images/1.png" alt="">
+                                                        </div>
+                                                </div>
+                                            </div>
+                                            <div class="v-sms" style="display: none;">
+                                                <div class="form-group">
+                                                    <div class="btn-group-template d-flex">
+                                                        <a href="/phone_number_template.xlsx" download="">Download template</a>
+                                                        <div class="upload-hidden-list-phone">
+                                                            <input type="file" id="upload_template"
+                                                            accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+                                                            <span>Upload list of phone numbers</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-10">
+                                                            <div class="input-group">
+                                                                <span class="input-group-text fas fa-phone-alt"></span>
+                                                                <input name="phone_number" type="text"
+                                                                    class="form-control outlined shadow-none phone_number input-sm"
+                                                                    placeholder="Phone number" maxlength="14">
+                                                                <input type="hidden" name="phone_numbers" class="phone_numbers">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-2 align-bottom text-right">
+                                                            <a id="add_phone_number" class="btn btn-outline-info"
+                                                                href="javascript:;">
+                                                                <i class="fas fa-phone-plus"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <label id="label_error_phone_number" class="error"
+                                                        style="display: none;">Please enter your valid phone number.</label>
+                                                    <div class="bd-example mt-3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- Core JS -->
-    <script type="text/javascript"  src="assets/js/jquery.js"></script>
-    <script type="text/javascript"  src="assets/js/popper.js"></script>
-    <script type="text/javascript"  src="assets/js/bootstrap.js"></script>
-    <script type="text/javascript"  src="assets/js/menu.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/popper.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="assets/js/menu.js"></script>
 
     <!-- Main JS -->
-    <script type="text/javascript"  src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
 
     <!-- Page JS -->
-    
-    <script type="text/javascript"  src="assets/vendor/libs/dataTables/jquery.dataTables.min.js"></script>
-	<script type="text/javascript"  src="assets/vendor/libs/dataTables/dataTables.bootstrap.min.js"></script>
-    <script type="text/javascript"  src="assets/vendor/libs/dropzone/dropzone.js"></script>
-    <script type="text/javascript"  src="assets/vendor/libs/dropzone/forms-file-upload.js"></script>
+
+    <script type="text/javascript" src="assets/vendor/libs/dataTables/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="assets/vendor/libs/dataTables/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/vendor/libs/dropzone/dropzone.js"></script>
+    <script type="text/javascript" src="assets/vendor/libs/dropzone/forms-file-upload.js"></script>
 
 
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             $('#dataTables').DataTable();
+            $('.method-verify').change(function(){
+                if (this.value == 'face_recognition') {
+                    $('.v-face-content').show();
+                    $('.v-sms').hide();
+                }
+                else if (this.value == 'sms_code') {
+                    $('.v-face-content').hide();
+                    $('.v-sms').show();
+                }
+            });
+            $('.switch-upload-photo').change(function(){
+                if ($(this).is(":checked")) {
+                    $('.upload-photo-content').show();
+                } else {
+                    $('.upload-photo-content').hide();
+                }
+            });
         })
     </script>
 </body>

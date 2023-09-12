@@ -600,3 +600,102 @@ ul.option-panel.option-list {
     font-weight: 400;
     color: #333;
 }
+.v-header {
+    position: relative;
+}
+.v-text-title {
+    font-weight: 500;
+}
+.v-radio-method {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+.form-check {
+    display: block;
+    min-height: 1.5rem;
+}
+.v-radio-method .form-check {
+    margin-right: 1rem;
+}
+.v-content {
+    position: relative;
+}
+.upload-photo-box {
+    position: relative;
+    border: 1px dashed #ccc;
+    border-radius: 4px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100px;
+}
+.upload-photo-box i {
+    font-size: 30px;
+    color: #fca905;
+}
+.upload-photo-box p {
+    font-size: 14px;
+    color: #ccc;
+    font-weight: 300;
+}
+.upload-photo-box .file-hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+.preview-photos {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin-top: 1rem;
+    padding: 5px;
+    border: 1px dashed #ccc;
+    border-radius: 4px;
+}
+.preview-photos img {
+    max-width: 100px;
+    margin: 5px;
+    border-radius: 10px;
+}
+.btn-group-template a {
+    margin-right: 20px;
+    text-decoration: revert;
+    color: #f93;
+}
+#upload_template {
+    color: transparent;
+}
+.btn-group-template {
+    display: flex;
+}
+
+.upload-hidden-list-phone {
+    position: relative;
+}
+
+.upload-hidden-list-phone input[type=file] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.upload-hidden-list-phone span {
+    display: inline-block;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #f93;
+    text-decoration: underline;
+}
