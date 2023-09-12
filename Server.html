@@ -107,26 +107,26 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="menu-item">
+                    <li class="menu-item active open">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons fal fa-server"></i>
                             <div>Server Access</div>
                         </a>
                         <ul class="menu-sub">
-                            <li class="menu-item">
+                            <li class="menu-item active">
                                 <a href="Server.html" class="menu-link">
                                     <div>Server</div>
                                 </a>
                             </li>
                         </ul>
                     </li>
-                    <li class="menu-item active open">
+                    <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons fal fa-camera-home"></i>
                             <div>Event Check-in</div>
                         </a>
                         <ul class="menu-sub">
-                            <li class="menu-item active">
+                            <li class="menu-item">
                                 <a href="Event.html" class="menu-link">
                                     <div>Event</div>
                                 </a>
@@ -225,192 +225,109 @@
                 <div class="content-wrapper">
                     <div class="container-xxl flex-grow-1 container-p-y">
                         <h4 class="py-3 mb-4">
-                            <span class="text-muted fw-light">Event Check-In Authenticator /</span> Create Event
+                            <span class="text-muted fw-light">Server Access Authenticator /</span> Server
                         </h4>
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <label class="title--heading  fs-30 text-black-5 mb-4">Event Information</label>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="mb-4">
-                                            <label class="form-label">Title Event</label>
-                                            <input type="text" class="form-control" value=""> 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="mb-4">
-                                            <label class="form-label">Link</label>
-                                            <input type="text" class="form-control" placeholder="Link">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-4">
-                                            <label class="form-label">Attackments</label>
-                                            <input type="file" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="mb-4">
-                                            <label class="form-label">Messeges</label>
-                                            <textarea class="form-control" style="min-height: 165px;resize: none;padding: 15px;" placeholder="Messeges" ></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="mb-4">
-                                            <button class="btn btn-primary">Submit</button>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="card">
+                            <div class="d-flex justify-between align-center pr-3 mb-4">
+                                <h5 class="card-header">Servers</h5>
+                                <a href="Event-Create.html" class="btn  add-new btn-primary ms-2 ms-sm-0">
+                                    <span>
+                                        <i class="ti ti-plus me-0 me-sm-1 ti-xs"></i>
+                                        <span class="d-none d-sm-inline-block">Add Server</span>
+                                    </span>
+                                </a>
                             </div>
-                        </div>
-                        <label class="title--heading fs-30 text-black-5 mb-4">Manage Users</label>
-                        <div class="row mb-4">
-                            <div class="col-md-7"> 
-                                <div class="card bg-white">
-                                    <div class="card-body">
-                                        <div class="hero-rw--list-users mt-8">
-                                            <div class="hero--users-box">
-                                                <div class="hero--title-3">List of Registered</div>
-                                                <div class="hr-list-users" id="listOfRegistered">
-                                                    <div class="users-item">
-                                                        <div class="us--img">
-                                                            <img src="assets/images/1.png" alt="" class="rounded-circle">
-                                                        </div>
-                                                        <div class="us-i4">
-                                                            <div class="us-name">Henry Quach</div>
-                                                            <div class="us-phone">0987 567 8899</div>
-                                                        </div>
-                                                        <button class="btn btn-danger btn-del-row"><i class="fal fa-trash"></i></button>
-                                                    </div>
-                                                </div>
-                                                <div class="add-users--icon">
-                                                    <button class="btn btn-info add-user-modal" data-bs-toggle="modal" data-bs-target="#addUserModal"><i class="fal fa-plus"></i> Add User</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-5"> 
-                                <div class="card bg-white  mb-4">
-                                    <div class="card-body">
-                                        <div class="hero-rw--list-users mt-8">
-                                            <div class="hero--users-box">
-                                                <div class="hero--title-3">List of Banned</div>
-                                                <div class="hr-list-users" id="listOfBanned">
-                                                    <div class="users-item">
-                                                        <button class="btn btn-danger btn-del-row"><i class="fal fa-trash"></i></button>
-                                                        <div class="us--img">
-                                                            <img src="assets/images/1.png" alt="" class="rounded-circle">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="add-users--icon">
-                                                    <button class="btn btn-danger add-user-banned-modal" data-bs-toggle="modal" data-bs-target="#addUserBannedModal"><i class="fal fa-plus"></i> Add User</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="addUserModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel1">Add New User</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="form-addUser px-4 py-4">
-                    <div class="h4-title mb-4 pb-3">User Information</div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group d-flex align-items-center">
-                                <label for="" class="mr-2 form-label">Avatar</label>
-                                <div class="uploadAvatar d-flex  align-items-center">
-                                    <img src="assets/images/default-user.png" alt="" class="mr-4">
-                                    <div class="uploadFile">
-                                        <button class="btn btn-danger"> <i class="fal fa-upload"></i> Upload File</button>
-                                        <input type="file" class="file-hidden">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-4">
-                                <input type="text" class="form-control" placeholder="Name">
-                            </div>
-                            <div class="mb-4">
-                                <input type="text" class="form-control" placeholder="Email">
-                            </div>
-                            <div class="mb-4">
-                                <input type="text" class="form-control" placeholder="Cellular Phone">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="h4-title mt-4 mb-4 pb-3">Seat Manager</div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="mb-4">
-                                <input type="text" class="form-control" placeholder="Gate">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-4">
-                                <input type="text" class="form-control" placeholder="Row">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="mb-4">
-                                <input type="text" class="form-control" placeholder="Seat">
+                            <div class="card-datatable table-responsive">
+                                <table id="dataTables" class="dt-multilingual table">
+                                    <thead>
+										<th>Title</th>
+										<th>Created At</th>
+										<th>STATUS</th>
+                                        <th>Action</th>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<div class="document-name">
+													<a href="#" class="text-gray-5">
+                                                        Programmer's Workshop in Ontario
+                                                    </a>
+												</div>
+											</td>
+											<td>
+												<span>Jul 04, 2023</span>
+											</td>
+											<td>
+												<a href="#" class="text-success bold text-success">Already</a>
+											</td>
+											<td>
+												<div class="dropdown ms-auto">
+													<a href="#" data-bs-toggle="dropdown" class="btn btn-floating" aria-haspopup="true" aria-expanded="false"> <i class="fal fa-ellipsis-h"></i> </a>
+													<div class="dropdown-menu dropdown-menu-end" style="margin: 0px;">
+														<a href="Event-Edit.html" class="dropdown-item">Edit</a>
+														<a href="Event-View.html" class="dropdown-item">View</a>
+                                                        <a href="#" class="dropdown-item ">Delete</a>
+													</div>
+												</div>
+											</td>
+										</tr>
+                                        <tr>
+											<td>
+												<div class="document-name">
+													<a href="#" class="text-gray-5">
+                                                        Programmer's Workshop in Ontario
+                                                    </a>
+												</div>
+											</td>
+											<td>
+												<span>Jul 04, 2023</span>
+											</td>
+											<td>
+												<a href="#" class="text-success bold text-success">Already</a>
+											</td>
+											<td>
+												<div class="dropdown ms-auto">
+													<a href="#" data-bs-toggle="dropdown" class="btn btn-floating" aria-haspopup="true" aria-expanded="false"> <i class="fal fa-ellipsis-h"></i> </a>
+													<div class="dropdown-menu dropdown-menu-end" style="margin: 0px;">
+														<a href="Event-Edit.html" class="dropdown-item">Edit</a>
+														<a href="Event-View.html" class="dropdown-item">View</a>
+                                                        <a href="#" class="dropdown-item ">Delete</a>
+													</div>
+												</div>
+											</td>
+										</tr>
+                                        <tr>
+											<td>
+												<div class="document-name">
+													<a href="#" class="text-gray-5">
+                                                        Programmer's Workshop in Ontario
+                                                    </a>
+												</div>
+											</td>
+											<td>
+												<span>Jul 04, 2023</span>
+											</td>
+											<td>
+												<a href="#" class="text-success bold text-success">Already</a>
+											</td>
+											<td>
+												<div class="dropdown ms-auto">
+													<a href="#" data-bs-toggle="dropdown" class="btn btn-floating" aria-haspopup="true" aria-expanded="false"> <i class="fal fa-ellipsis-h"></i> </a>
+													<div class="dropdown-menu dropdown-menu-end" style="margin: 0px;">
+														<a href="Event-Edit.html" class="dropdown-item">Edit</a>
+														<a href="Event-View.html" class="dropdown-item">View</a>
+                                                        <a href="#" class="dropdown-item ">Delete</a>
+													</div>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Add New User</button>
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="modal fade" id="addUserBannedModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel1">Add members to the banned list</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-            <div class="modal-body">
-              <div class="row">
-                <div class="col mb-3">
-                    <form action="https://docerfy.com/upload-file" class="dropzone needsclick" id="dropzone-multi">
-                        <div class="dz-message needsclick">
-                          Drop files here or click to upload
-                          <span class="note needsclick">(Selected files are <span class="fw-medium">not</span> actually uploaded.)</span>
-                        </div>
-                        <div class="fallback">
-                          <input name="file" accept=".png, .jpg, .jepg" type="file" name="document[image]" id="input_upload_document" multiple/>
-                        </div>
-                    </form>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer" style="justify-content: center;">
-              <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Cancel</button>
-              <button class="btn btn-danger">Add User</button>
-            </div>
-          </div>
         </div>
     </div>
 
