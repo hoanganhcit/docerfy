@@ -13,12 +13,12 @@
 
     <!-- Favicon -->
     <link rel="stylesheet" href="assets/css/tabler-icons.css" />
-    <link rel="icon" type="image/x-icon"
-        href="assets/images/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+
     <!-- Icons -->
     <link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet" type="text/css">
 
@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
 
     <!-- PAGE CSS -->
-
+    <link rel="stylesheet" href="assets/vendor/libs/sweetalert2/sweetalert2.css">
 
     <!-- Helpers -->
     <script src="assets/js/helpers.js"></script>
@@ -55,7 +55,7 @@
                 </div>
                 <div class="menu-inner-shadow"></div>
                 <ul class="menu-inner py-1">
-                    <li class="menu-item active ">
+                    <li class="menu-item  ">
                         <a href="#" class="menu-link">
                             <i class="menu-icon tf-icons fal fa-tachometer-alt"></i>
                             <div>Dashboard</div>
@@ -148,7 +148,7 @@
                         <div class="navbar-nav align-items-center">
                             <div class="nav-item navbar-search-wrapper mb-0">
                                 <div class="py-3">
-                                    <span class="text-muted fw-light">Dashboard</span>
+                                    <span class="text-muted fw-light">Docerfy /</span> Team Members
                                 </div>
                             </div>
                         </div>
@@ -217,17 +217,160 @@
                         </ul>
                     </div>
                 </nav>
+                <div class="content-wrapper">
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul class="nav nav-pills flex-column flex-sm-row mb-4">
+                                    <li class="nav-item"><a class="nav-link " href="Profile.html"><i class="ti-xs ti ti-user-check me-1"></i> Profile</a></li>
+                                    <li class="nav-item"><a class="nav-link active" href="Teams.html"><i class="ti-xs ti ti-users me-1"></i> Teams</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="Packages.html"><i class="ti-xs ti ti-credit-card me-1"></i> Upgrade Package</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row flex-end">
+                            <div class="col mb-3">
+                                <button  data-bs-toggle="modal" data-bs-target="#basicModal" class="btn  add-new btn-primary ms-2 ms-sm-0">
+                                    <span>
+                                        <i class="ti ti-plus me-0 me-sm-1 ti-xs"></i>
+                                        <span class="d-none d-sm-inline-block">Add New Member</span>
+                                    </span>
+                                </button>
+                                <a href="Receiver-Profile.html" class="add-folder btn btn-warning waves-effect mx-2">
+                                    <i class="ti ti-users  me-0 me-sm-1 ti-xs"></i>
+                                    <span>Receiver Profile</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card pb-4">
+                            <div class="row">
+                                <div class="col">
+                                    <h5 class="card-header">Team Members</h5>
+                                </div>
+                            </div>
+                            <div class="card-datatable table-responsive"> 
+                                <table id="dataTables" class="dt-multilingual table">
+                                    <thead>
+                                        <th>Email</th>
+                                        <th>FULL NAME</th>
+                                        <th>Date Added</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                business1@yopmail.com
+                                            </td>
+                                            <td>
+                                                David Tran
+                                            </td>
+                                            <td>
+                                                11 months
+                                            </td>
+                                            <td>Active</td>
+                                            <td>
+                                                <div class="dropdown ms-auto">
+                                                    <a href="#" data-bs-toggle="dropdown" class="btn btn-floating"
+                                                        aria-haspopup="true" aria-expanded="false"> <i
+                                                            class="fal fa-ellipsis-h"></i> </a>
+                                                    <div class="dropdown-menu dropdown-menu-end" style="margin: 0px;">
+                                                        <a href="#" class="dropdown-item">Edit</a>
+                                                        <a href="#" class="dropdown-item " >Owner</a>
+                                                        <a href="#" class="dropdown-item remove-user">Delete</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <div class="modal fade" id="basicModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <form class="simple_form new_member" id="form_new_member" novalidate="novalidate" action="/business/members" accept-charset="UTF-8" data-remote="true" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel1">Create A Team Member</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                <div class="modal-body">
+                    <div class="__create_folder row">
+                        <div class="col md-3">
+                            <label class="form-label">Full name *</label>
+                            <div class="input string required member_full_name">
+                                <input class="string required form-control" required="required" aria-required="true" type="text" name="member[full_name]" id="member_full_name">
+                            </div>
+                        </div>
+                        <div class="col md-3">
+                            <label class="form-label">Email *</label>
+                            <input type="text" name="email" id="email" value="" class="form-control" required="required" email="true">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Create</button>
+                </div>
+            </form>
+          </div>
+        </div>
+    </div>
     <!-- Core JS -->
-    <script type="text/javascript"  src="assets/js/jquery.js"></script>
-    <script type="text/javascript"  src="assets/js/popper.js"></script>
-    <script type="text/javascript"  src="assets/js/bootstrap.js"></script>
-    <script type="text/javascript"  src="assets/js/menu.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/popper.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="assets/js/menu.js"></script>
 
     <!-- Main JS -->
-    <script type="text/javascript"  src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+    <!-- Page JS -->
+    
+    <script type="text/javascript"  src="assets/vendor/libs/dataTables/jquery.dataTables.min.js"></script>
+	<script type="text/javascript"  src="assets/vendor/libs/dataTables/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript"  src="assets/vendor/libs/sweetalert2/sweetalert2.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#dataTables').DataTable({
+                searching: false, 
+                paging: false,
+				"info": false
+            });
+            $(".remove-user").click(function () {
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "Are you sure you want to remove document Test from the envelope?",
+                    icon: "warning",
+                    showCancelButton: !0,
+                    confirmButtonText: "Yes, delete it!",
+                    customClass: { confirmButton: "btn btn-primary me-3", cancelButton: "btn btn-label-secondary" },
+                    buttonsStyling: !1,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                        )
+                    } else if (
+                        result.dismiss === Swal.DismissReason.cancel
+                    ) {
+                        Swal.fire(
+                        'Cancelled',
+                        'Your imaginary file is safe :)',
+                        'error'
+                        )
+                };
+            });
+        });
+    });
+    </script>
 </body>
 
 </html>

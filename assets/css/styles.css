@@ -1,7 +1,16 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
 body {
     background: #f8f7fa;
 }
-
+.app-brand-text {
+    font-family: 'Playfair Display SC', serif;
+    text-transform: uppercase;
+}
+.btn {
+    cursor: pointer;
+}
 .light-style .menu .app-brand.demo {
     height: 64px;
 }
@@ -698,4 +707,20 @@ ul.option-panel.option-list {
     cursor: pointer;
     color: #f93;
     text-decoration: underline;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.table th {
+    background: #f7f7f7;
+}
+.h-75 {
+    display: block;
+    min-height: 75px;
+}
+small.price-yearly {
+    font-size: 16px;
+}
+.package-card {
+    min-height: 452px;
 }
