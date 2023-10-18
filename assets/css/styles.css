@@ -724,3 +724,10 @@ small.price-yearly {
 .package-card {
     min-height: 452px;
 }
+.menu-icon {
+    font-size: 17px;
+}
+.tooltip-inner {
+    font-size: 14px;
+    border-radius: 3px;
+}
