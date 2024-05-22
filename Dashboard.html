@@ -13,8 +13,7 @@
 
     <!-- Favicon -->
     <link rel="stylesheet" href="assets/css/tabler-icons.css" />
-    <link rel="icon" type="image/x-icon"
-        href="assets/images/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
@@ -26,6 +25,7 @@
     <link rel="stylesheet" href="assets/css/core.css" />
     <link rel="stylesheet" href="assets/css/theme-default.css" />
     <link rel="stylesheet" href="assets/css/dataTable.css" />
+    <link rel="stylesheet" href="assets/css/apex-charts.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
 
     <!-- PAGE CSS -->
@@ -34,6 +34,64 @@
     <!-- Helpers -->
     <script src="assets/js/helpers.js"></script>
     <script src="assets/js/config.js"></script>
+
+    <style>
+        .avatar-next {
+            position: relative;
+            width: 2.375rem;
+            height: 2.375rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .avatar.avatar-number {
+            background: #03a9f4;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .bg-label-primary {
+            background-color: #d6f2ff !important;
+            color: #03a9f4 !important;
+        }
+
+        .card-footer-bg {
+            border-radius: 0 0 0.375rem 0.375rem;
+        }
+
+        .btn-label-primary {
+            color: #03a9f4;
+            border-color: rgba(0, 0, 0, 0);
+            background: #d6f2ff;
+        }
+        .progress {
+            height: 5px;
+            position: relative;
+            overflow: inherit;
+        }
+        .process-bar-circle {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            top: -5px;
+        }
+        .text-bold {
+            font-weight: 600;
+        }
+        .mb-6 {
+            margin-bottom: 3em;
+        }
+    </style>
 
 </head>
 
@@ -148,7 +206,7 @@
                         <div class="navbar-nav align-items-center">
                             <div class="nav-item navbar-search-wrapper mb-0">
                                 <div class="py-3">
-                                    <span class="text-muted fw-light">Dashboard</span>
+                                    <span class="text-muted fw-light">Server Access /</span> Dashboard
                                 </div>
                             </div>
                         </div>
@@ -217,17 +275,305 @@
                         </ul>
                     </div>
                 </nav>
+                <div class="content-wrapper">
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <div class="mb-4">
+                            <div class="d-flex justify-between align-center mb-4">
+                                <h5 class="card-header">Dashboard</h5>
+                                <div class="button-group">
+                                    <a href="#" class="btn  add-new btn-primary ms-2 ms-sm-0">
+                                        <span>
+                                            <i class="fal fa-cogs me-0 me-sm-1 ti-xs"></i>
+                                            <span class="d-none d-sm-inline-block">SSH Setup</span>
+                                        </span>
+                                    </a>
+                                    <a href="#" class="btn  add-new btn-primary ms-2 ms-sm-0">
+                                        <span>
+                                            <i class="ti ti-plus me-0 me-sm-1 ti-xs"></i>
+                                            <span class="d-none d-sm-inline-block">New Developer</span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="d-flex justify-between align-center pr-3">
+                                    <h5 class="card-header">Team Members (26)</h5>
+                                    <div class="d-flex align-items-center avatar-group">
+                                        <div class="avatar pull-up" data-bs-toggle="tooltip" data-popup="tooltip-custom"
+                                            data-bs-placement="top" aria-label="David" data-bs-original-title="David">
+                                            <img src="assets/images/avatars/1.png" alt="Avatar" class="rounded-circle">
+                                        </div>
+                                        <div class="avatar pull-up" data-bs-toggle="tooltip" data-popup="tooltip-custom"
+                                            data-bs-placement="top" aria-label="Henry"
+                                            data-bs-original-title="Henry Quach">
+                                            <img src="assets/images/avatars/2.png" alt="Avatar" class="rounded-circle">
+                                        </div>
+                                        <div class="avatar pull-up" data-bs-toggle="tooltip" data-popup="tooltip-custom"
+                                            data-bs-placement="top" aria-label="Jimmy"
+                                            data-bs-original-title="Jimmy Jackson">
+                                            <img src="assets/images/avatars/3.png" alt="Avatar" class="rounded-circle">
+                                        </div>
+                                        <div class="avatar pull-up" data-bs-toggle="tooltip" data-popup="tooltip-custom"
+                                            data-bs-placement="top" aria-label="Danny"
+                                            data-bs-original-title="Danny Gill">
+                                            <img src="assets/images/avatars/4.png" alt="Avatar" class="rounded-circle">
+                                        </div>
+                                        <div class="avatar avatar-number">
+                                            <span>+22</span>
+                                        </div>
+                                        <div class="avatar-next">
+                                            <i class="fal fa-angle-right"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 col-lg-4 mb-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-between align-center mb-2 pb-1">
+                                            <h5 class="ms-1 mb-0">Access Granted</h5>
+                                            <div class="avatar">
+                                                <span class="avatar-initial rounded bg-label-primary">
+                                                    <i class="fas fa-eye"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <h4 class="me-2">715,345,430</h4>
+                                        <div class="d-flex justify-between align-center mb-2">
+                                            <p class="mb-0">
+                                                <small class="text-muted">Weeks:</small>
+                                                <span class="fw-medium me-1">18.2% <i
+                                                        class="fas fa-caret-up text-success"></i></span>
+                                            </p>
+                                            <p class="mb-0">
+                                                <small class="text-muted">Days:</small>
+                                                <span class="fw-medium me-1">5.2% <i
+                                                        class="fas fa-caret-down text-danger"></i></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="d-flex justify-between align-center bg-primary card-footer-bg px-3 py-3">
+                                        <p class="ms-1 mb-0 text-white">Daily Granted</p>
+                                        <p class="ms-1 mb-0 text-white">27,289</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4 mb-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-between align-center mb-2 pb-1">
+                                            <h5 class="ms-1 mb-0">Access Denied</h5>
+                                            <div class="avatar">
+                                                <span class="avatar-initial rounded bg-label-danger">
+                                                    <i class="fas fa-heart"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <h4 class="me-2">545,430</h4>
+                                        <div class="d-flex justify-between align-center mb-2">
+                                            <p class="mb-0">
+                                                <small class="text-muted">Weeks:</small>
+                                                <span class="fw-medium me-1">18.2% <i
+                                                        class="fas fa-caret-up text-success"></i></span>
+                                            </p>
+                                            <p class="mb-0">
+                                                <small class="text-muted">Days:</small>
+                                                <span class="fw-medium me-1">5.2% <i
+                                                        class="fas fa-caret-down text-danger"></i></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-between align-center bg-danger card-footer-bg px-3 py-3">
+                                        <p class="ms-1 mb-0 text-white">Daily Denial</p>
+                                        <p class="ms-1 mb-0 text-white">3,423</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4 mb-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-between align-center mb-2 pb-1">
+                                            <h5 class="ms-1 mb-0">Server Access Duration</h5>
+                                            <div class="avatar">
+                                                <span class="avatar-initial rounded bg-label-warning">
+                                                    <i class="fas fa-eye"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <h4 class="me-2">480 Minutes</h4>
+                                        <div class="d-flex justify-between align-center mb-2">
+                                            <p class="mb-0">
+                                                <small class="text-muted">Weeks:</small>
+                                                <span class="fw-medium me-1">18.2% <i
+                                                        class="fas fa-caret-up text-success"></i></span>
+                                            </p>
+                                            <p class="mb-0">
+                                                <small class="text-muted">Days:</small>
+                                                <span class="fw-medium me-1">5.2% <i
+                                                        class="fas fa-caret-down text-danger"></i></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="d-flex justify-between align-center bg-warning card-footer-bg px-3 py-3">
+                                        <p class="ms-1 mb-0 text-white">Daily Access Duration</p>
+                                        <p class="ms-1 mb-0 text-white">689</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8 col-sm-8 mb-4">
+                                <div class="card">
+                                    <div class="card-header d-flex align-items-center justify-content-between">
+                                        <div class="card-title mb-0">
+                                            <h5 class="m-0 me-2"><i class="fal fa-chart-line mr-2 text-primary"></i>
+                                                Access Report</h5>
+                                        </div>
+                                        <div class="dropdown">
+                                            <button type="button" class="btn bg-label-primary dropdown-toggle"
+                                                data-bs-toggle="dropdown" aria-expanded="false">January</button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="javascript:void(0);">January</a></li>
+                                                <li><a class="dropdown-item" href="javascript:void(0);">February</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="javascript:void(0);">March</a></li>
+                                                <li><a class="dropdown-item" href="javascript:void(0);">April</a></li>
+                                                <li><a class="dropdown-item" href="javascript:void(0);">May</a></li>
+                                                <li><a class="dropdown-item" href="javascript:void(0);">June</a></li>
+                                                <li><a class="dropdown-item" href="javascript:void(0);">July</a></li>
+                                                <li><a class="dropdown-item" href="javascript:void(0);">August</a></li>
+                                                <li><a class="dropdown-item" href="javascript:void(0);">September</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="javascript:void(0);">October</a></li>
+                                                <li><a class="dropdown-item" href="javascript:void(0);">November</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="javascript:void(0);">December</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="reportChart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-lg-4 mb-4">
+                                <div class="card">
+                                    <div class="card-header d-flex align-items-center justify-content-between">
+                                        <div class="card-title mb-0">
+                                            <h5 class="m-0 me-2"><i class="fal fa-sliders-h mr-2 text-warning"></i>
+                                                Resources</h5>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group mb-6">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <label class="text-bold">New Server</label>
+                                                <label>40,000</label>
+                                            </div>
+                                            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar" style="width: 55%"></div>
+                                                <div class="process-bar-circle bg-primary" style="left: 55%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-6">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <label class="text-bold">New Developer</label>
+                                                <label>2,700</label>
+                                            </div>
+                                            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar bg-danger" style="width: 75%"></div>
+                                                <div class="process-bar-circle bg-danger" style="left: 75%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-6">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <label class="text-bold">Removed Developer</label>
+                                                <label>400</label>
+                                            </div>
+                                            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar bg-warning" style="width: 25%"></div>
+                                                <div class="process-bar-circle bg-warning" style="left: 25%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <!-- Core JS -->
-    <script type="text/javascript"  src="assets/js/jquery.js"></script>
-    <script type="text/javascript"  src="assets/js/popper.js"></script>
-    <script type="text/javascript"  src="assets/js/bootstrap.js"></script>
-    <script type="text/javascript"  src="assets/js/menu.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/popper.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="assets/js/menu.js"></script>
+
+    <script type="text/javascript" src="assets/js/apexcharts.js"></script>
 
     <!-- Main JS -->
-    <script type="text/javascript"  src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+    <script>
+        var options = {
+            series: [{
+                name: 'Access Granted',
+                type: 'line',
+                data: [69, 55, 31, 47, 31, 43, 26],
+                color: '#03a9f4'
+            }, {
+                name: 'Access Denied',
+                type: 'line',
+                data: [30, 29, 45, 61, 43, 54, 37],
+                color: '#ea5455'
+            }, {
+                name: 'Server Access Duration',
+                type: 'line',
+                data: [55, 69, 45, 71, 63, 61, 43],
+                color: '#ff9f43'
+            }],
+            chart: {
+                height: 350,
+                type: 'line',
+                toolbar: {
+                    show: false
+                }
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            fill: {
+                type: 'solid',
+                opacity: [1, 1]
+            },
+            labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+            markers: {
+                size: 0
+            },
+            yaxis: [],
+            tooltip: {
+                shared: true,
+                intersect: false,
+                y: {
+                    formatter: function (y) {
+                        if (typeof y !== "undefined") {
+                            return y.toFixed(0) + " points";
+                        }
+                        return y;
+                    }
+                }
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#reportChart"), options);
+        chart.render();
+    </script>
 </body>
 
 </html>
