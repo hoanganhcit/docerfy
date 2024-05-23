@@ -5,8 +5,8 @@ body {
     background: #f8f7fa;
 }
 .app-brand-text {
-    font-family: 'Playfair Display SC', serif;
-    text-transform: uppercase;
+    /* font-family: 'Playfair Display SC', serif;
+    text-transform: uppercase; */
 }
 .btn {
     cursor: pointer;
@@ -29,7 +29,10 @@ body {
 }
 
 .app-brand-text.demo {
-    font-size: 1.375rem;
+    font-size: 18px;
+    line-height: 40px;
+    display: inline-block;
+    font-weight: 600;
 }
 
 /* ! For .layout-navbar-fixed added fix padding top tpo .layout-page */
