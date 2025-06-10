@@ -127,6 +127,11 @@
         .inline-flex {
             display: inline-flex;
         }
+        
+        .btn-sm, .btn-group-sm>.btn {
+            line-height: 1;
+            margin: 2px 0;
+        }
     </style>
 
 </head>
@@ -348,7 +353,7 @@
                                                     <span>20</span>
                                                 </td>
                                                 <td class="text-center">
-                                                    <div class="form-check form-switch reset_authenticate_box inline-flex align-items-center gap-2">
+                                                    <div class="form-check form-switch toggle-active-switch reset_authenticate_box inline-flex align-items-center gap-2">
                                                         <input class="form-check-input" type="checkbox" id="reset_authenticate_50" checked>
                                                         <label class="form-check-label" for="reset_authenticate_50"></label>
                                                     </div>
@@ -371,7 +376,7 @@
                                                     <span class="app-name">FacioSign</span>
                                                 </td>
                                                 <td>
-                                                    <a href="#"  target="_blank"  class="domain">axiam.io</a>
+                                                    <a href="#"  target="_blank"  class="domain">faciosign.com</a>
                                                 </td>
                                                 <td>
                                                     <span>Jul 15, 2025 - 13:00 PM</span>
@@ -383,7 +388,7 @@
                                                     <span>10</span>
                                                 </td>
                                                 <td class="text-center">
-                                                    <div class="form-check form-switch reset_authenticate_box inline-flex align-items-center gap-2">
+                                                    <div class="form-check form-switch toggle-active-switch reset_authenticate_box inline-flex align-items-center gap-2">
                                                         <input class="form-check-input" type="checkbox" id="reset_authenticate_50" >
                                                         <label class="form-check-label" for="reset_authenticate_50"></label>
                                                     </div>
@@ -406,7 +411,7 @@
                                                     <span class="app-name">SecureFace</span>
                                                 </td>
                                                 <td>
-                                                    <a href="#"  target="_blank"  class="domain">axiam.io</a>
+                                                    <a href="#"  target="_blank"  class="domain">secureface.com</a>
                                                 </td>
                                                 <td>
                                                     <span>Jul 13, 2025 - 13:00 PM</span>
@@ -418,7 +423,7 @@
                                                     <span>10</span>
                                                 </td>
                                                 <td class="text-center">
-                                                    <div class="form-check form-switch reset_authenticate_box inline-flex align-items-center gap-2">
+                                                    <div class="form-check form-switch toggle-active-switch reset_authenticate_box inline-flex align-items-center gap-2">
                                                         <input class="form-check-input" type="checkbox" id="reset_authenticate_50" checked>
                                                         <label class="form-check-label" for="reset_authenticate_50"></label>
                                                     </div>
@@ -453,7 +458,7 @@
                                                     <span>12</span>
                                                 </td>
                                                 <td class="text-center">
-                                                    <div class="form-check form-switch reset_authenticate_box inline-flex align-items-center gap-2">
+                                                    <div class="form-check form-switch toggle-active-switch reset_authenticate_box inline-flex align-items-center gap-2">
                                                         <input class="form-check-input" type="checkbox" id="reset_authenticate_50" >
                                                         <label class="form-check-label" for="reset_authenticate_50"></label>
                                                     </div>
@@ -534,6 +539,27 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal Change Active Switch -->
+    <div class="modal fade" id="confirmSwitchModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirm Change</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to change this setting?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" id="confirmSwitchBtn" class="btn btn-primary">Yes, Change</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- Core JS -->
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/popper.js"></script>
@@ -543,34 +569,50 @@
     <!-- Main JS -->
     <script type="text/javascript" src="assets/js/main.js"></script>
     <script>
+        $(document).ready(function () {
+            $('.btn-edit-app').on('click', function () {
+                const $row = $(this).closest('tr');
+                $('#appName').val($row.find('.app-name').text().trim());
+                $('#domain').val($row.find('.domain').text().trim());
+                $('#modalNewAppLabel').text('Edit App');
+                $('#modalButtonModal').text('Update');
+                $('#modal_new_app').modal('show');
+            });
+            $('.addNewAppBtn').on('click', function () {
+                $('#addAppForm')[0].reset();
+                $('#modalNewAppLabel').text('Add New App');
+                $('#modalButtonModal').text('Save');
+            });
 
-        $('.btn-edit-app').on('click', function () {
-            const $row = $(this).closest('tr');
-            $('#appName').val($row.find('.app-name').text().trim());
-            $('#domain').val($row.find('.domain').text().trim());
-            $('#modalNewAppLabel').text('Edit App');
-            $('#modalButtonModal').text('Update');
-            $('#modal_new_app').modal('show');
-        });
-        $('.addNewAppBtn').on('click', function () {
-            $('#addAppForm')[0].reset();
-            $('#modalNewAppLabel').text('Add New App');
-            $('#modalButtonModal').text('Save');
-        });
+            let $rowToDelete = null;
 
-        let $rowToDelete = null;
+            $('.btn-delete-app').on('click', function () {
+                $rowToDelete = $(this).closest('tr');
+                $('#confirmDeleteModal').modal('show');
+            });
 
-        $('.btn-delete-app').on('click', function () {
-            $rowToDelete = $(this).closest('tr');
-            $('#confirmDeleteModal').modal('show');
-        });
+            $('#confirmDeleteBtn').on('click', function () {
+                if ($rowToDelete) {
+                    $rowToDelete.remove();
+                    $rowToDelete = null;
+                    $('#confirmDeleteModal').modal('hide');
+                }
+            });
 
-        $('#confirmDeleteBtn').on('click', function () {
-            if ($rowToDelete) {
-                $rowToDelete.remove();
-                $rowToDelete = null;
-                $('#confirmDeleteModal').modal('hide');
-            }
+            let currentCheckbox = null;
+            
+            $('.toggle-active-switch').on('click', function(e) {
+                e.preventDefault();
+                currentCheckbox = $(this);
+                $('#confirmSwitchModal').modal('show');
+            });
+            
+            $('#confirmSwitchBtn').on('click', function() {
+                if (currentCheckbox) {
+                    currentCheckbox.prop('checked', !currentCheckbox.prop('checked'));
+                }
+                $('#confirmSwitchModal').modal('hide');
+            });
         });
     </script>
 </body>
