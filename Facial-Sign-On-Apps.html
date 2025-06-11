@@ -354,8 +354,8 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <div class="form-check form-switch toggle-active-switch reset_authenticate_box inline-flex align-items-center gap-2">
-                                                        <input class="form-check-input" type="checkbox" id="reset_authenticate_50" checked>
-                                                        <label class="form-check-label" for="reset_authenticate_50"></label>
+                                                        <input class="form-check-input" type="checkbox" id="" checked>
+                                                        <label class="form-check-label" for=""></label>
                                                     </div>
                                                 </td>
                                                 <td>
@@ -389,8 +389,8 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <div class="form-check form-switch toggle-active-switch reset_authenticate_box inline-flex align-items-center gap-2">
-                                                        <input class="form-check-input" type="checkbox" id="reset_authenticate_50" >
-                                                        <label class="form-check-label" for="reset_authenticate_50"></label>
+                                                        <input class="form-check-input" type="checkbox" id="" >
+                                                        <label class="form-check-label" for=""></label>
                                                     </div>
                                                 </td>
                                                 <td>
@@ -424,8 +424,8 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <div class="form-check form-switch toggle-active-switch reset_authenticate_box inline-flex align-items-center gap-2">
-                                                        <input class="form-check-input" type="checkbox" id="reset_authenticate_50" checked>
-                                                        <label class="form-check-label" for="reset_authenticate_50"></label>
+                                                        <input class="form-check-input" type="checkbox" id="" checked>
+                                                        <label class="form-check-label" for=""></label>
                                                     </div>
                                                 </td>
                                                 <td>
@@ -459,8 +459,8 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <div class="form-check form-switch toggle-active-switch reset_authenticate_box inline-flex align-items-center gap-2">
-                                                        <input class="form-check-input" type="checkbox" id="reset_authenticate_50" >
-                                                        <label class="form-check-label" for="reset_authenticate_50"></label>
+                                                        <input class="form-check-input" type="checkbox" id="" >
+                                                        <label class="form-check-label" for=""></label>
                                                     </div>
                                                 </td>
                                                 <td>
@@ -601,17 +601,17 @@
 
             let currentCheckbox = null;
             
-            $('.toggle-active-switch').on('click', function(e) {
+            $('.form-check-input').on('click', function(e) {
                 e.preventDefault();
                 currentCheckbox = $(this);
                 $('#confirmSwitchModal').modal('show');
             });
             
-            $('#confirmSwitchBtn').on('click', function() {
+            $('#confirmSwitchBtn').on('click', function () {
                 if (currentCheckbox) {
                     currentCheckbox.prop('checked', !currentCheckbox.prop('checked'));
+                    $('#confirmSwitchModal').modal('hide');
                 }
-                $('#confirmSwitchModal').modal('hide');
             });
         });
     </script>
