@@ -132,6 +132,9 @@
             line-height: 1;
             margin: 2px 0;
         }
+        .bg-grey-4 {
+            background: #f4f4f4;
+        }
     </style>
 
 </head>
@@ -622,16 +625,12 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <div class="modal-body">
-                <p class="mb-0">This is the secret key:</p>
+            <div class="modal-body mb-4">
+                <p class="mb-1">This is the secret key:</p>
                 <div class="input-group">
-                    <input type="text" id="secretKeyContent" class="form-control" value="" readonly>
+                    <input type="text" id="secretKeyContent" class="form-control bg-grey-4" value="" readonly>
                     <button class="btn btn-outline-secondary copy-btn" data-target="#secretKeyContent">Copy</button>
                 </div>
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
 
             </div>
