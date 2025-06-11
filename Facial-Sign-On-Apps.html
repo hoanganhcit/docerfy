@@ -332,6 +332,7 @@
                                                 <th>Members</th>
                                                 <th class="text-center">Active/Inactive</th>
                                                 <th>API Key</th>
+                                                <th>Secret Key</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
@@ -359,7 +360,10 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <span>KPI-1718016749321-X7fD9kL2qVbM1wNz</span>
+                                                    <span>API-1718016749321-X7fD9kL2qVbM1wNz</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#viewSecretKeyModal" data-value="jaCFhsnuwXHBz78uL0MqsRAivOPKhgyFxNzLaehPo" class="fas fa-eye text-primary"></a>
                                                 </td>
                                                 <td>
                                                     <a href="javascript:;" class="btn btn-sm btn-warning btn-edit-app">
@@ -394,7 +398,10 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <span>KPI-1718016749321-X7fD9kL2qVbM1wNz</span>
+                                                    <span>API-1718016749321-X7fD9kL2qVbM1wNz</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#viewSecretKeyModal" data-value="3Yrfw2TXCjBz78uL0MqsRAivOPKhgyFxNzLaenhK" class="fas fa-eye text-primary"></a>
                                                 </td>
                                                 <td>
                                                     <a href="javascript:;" class="btn btn-sm btn-warning btn-edit-app">
@@ -429,7 +436,10 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <span>KPI-1718016749321-X7fD9kL2qVbM1wNz</span>
+                                                    <span>API-1718016749321-X7fD9kL2qVbM1wNz</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#viewSecretKeyModal" data-value="mP9zXVk78Wq1NeYTLFu0CkRyABOdgxvMsJi3qrUZ" class="fas fa-eye text-primary"></a>
                                                 </td>
                                                 <td>
                                                     <a href="javascript:;" class="btn btn-sm btn-warning btn-edit-app">
@@ -464,7 +474,10 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <span>KPI-1718016749321-X7fD9kL2qVbM1wNz</span>
+                                                    <span>API-1718016749321-X7fD9kL2qVbM1wNz</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#viewSecretKeyModal" data-value="7YrKYCNhsjBz78uL0MqsRAivOPKhgyFxNzLaehLa" class="fas fa-eye text-primary"></a>
                                                 </td>
                                                 <td>
                                                     <a href="javascript:;" class="btn btn-sm btn-warning btn-edit-app">
@@ -514,7 +527,7 @@
             
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="submit" form="addAppForm" class="btn btn-primary" id="modalButtonModal">Save</button>
+                <button type="button" class="btn btn-primary" id="modalButtonModal">Save</button>
             </div>
             
             </div>
@@ -559,6 +572,71 @@
         </div>
     </div>
 
+    <!-- API Key Modal -->
+    <div class="modal fade" id="apiKeyModal" tabindex="-1" aria-labelledby="apiKeyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            
+            <div class="modal-header">
+                <h5 class="modal-title" id="apiKeyModalLabel">Important!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            
+            <div class="modal-body">
+                <p><strong>Please save your API Key and Secret Key securely.</strong></p>
+                <p>You will need these credentials to authenticate and access our APIs.</p>
+
+                <div class="mb-3">
+                <label class="form-label">API Key</label>
+                <div class="input-group">
+                    <input type="text" id="apiKeyInput" class="form-control" value="API-1718016749321-X7fD9kL2qVbM1wNz" readonly>
+                    <button class="btn btn-outline-secondary copy-btn" data-target="#apiKeyInput">Copy</button>
+                </div>
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label">Secret Key</label>
+                    <div class="input-group">
+                        <input type="text" id="secretKeyInput" class="form-control" value="3Yrfw2TXCjBz78uL0MqsRAivOPKhgyFxNzLaehPo" readonly>
+                        <button class="btn btn-outline-secondary copy-btn" data-target="#secretKeyInput">Copy</button>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Complete</button>
+            </div>
+            
+            </div>
+        </div>
+    </div>
+
+    <!-- View Secret Key Modal -->
+    <div class="modal fade" id="viewSecretKeyModal" tabindex="-1" aria-labelledby="viewSecretKeyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="viewSecretKeyModalLabel">Secret Key</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <p class="mb-0">This is the secret key:</p>
+                <div class="input-group">
+                    <input type="text" id="secretKeyContent" class="form-control" value="" readonly>
+                    <button class="btn btn-outline-secondary copy-btn" data-target="#secretKeyContent">Copy</button>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+
+            </div>
+        </div>
+    </div>
 
     <!-- Core JS -->
     <script type="text/javascript" src="assets/js/jquery.js"></script>
@@ -581,7 +659,35 @@
             $('.addNewAppBtn').on('click', function () {
                 $('#addAppForm')[0].reset();
                 $('#modalNewAppLabel').text('Add New App');
+                $('#modalButtonModal').addClass('saveNewAppBtn');
                 $('#modalButtonModal').text('Save');
+            });
+
+            $('#modalButtonModal').on('click', function () {
+                $('#modal_new_app').modal('hide');
+                $('#apiKeyModal').modal('show');
+            });
+
+            $('.copy-btn').on('click', function() {
+                const inputSelector = $(this).data('target');
+                const $input = $(inputSelector);
+                
+                $input.prop('readonly', false);
+                $input.select();
+                document.execCommand('copy');
+                $input.prop('readonly', true);
+
+                const $btn = $(this);
+                const originalText = $btn.text();
+                $btn.text('Copied!');
+                setTimeout(function() {
+                $btn.text(originalText);
+                }, 1500);
+            });
+
+            $(document).on('click', 'a[data-bs-target="#viewSecretKeyModal"]', function () {
+                const secretKey = $(this).data('value');
+                $('#secretKeyContent').val(secretKey);
             });
 
             let $rowToDelete = null;
