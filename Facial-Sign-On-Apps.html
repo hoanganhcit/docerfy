@@ -378,9 +378,9 @@
                                                     <a href="javascript:;" data-bs-toggle="modal"
                                                         data-bs-target="#viewSecretKeyModal"
                                                         data-value="jaCFhsnuwXHBz78uL0MqsRAivOPKhgyFxNzLaehPo"
-                                                        data-bs-toggle="tooltip"
-                                                        title="Click View"
-                                                        class="fas fa-eye text-primary view-secret-key-icon"></a>
+                                                        class="view-secret-key-icon">
+                                                            <span title="Click View" data-bs-toggle="tooltip"  class="fas fa-eye text-primary "></span>
+                                                    </a>
                                                 </td>
                                                 <td>
                                                     <a href="javascript:;" class="btn btn-sm btn-warning btn-edit-app">
@@ -421,10 +421,10 @@
                                                 <td class="text-center">
                                                     <a href="javascript:;" data-bs-toggle="modal"
                                                         data-bs-target="#viewSecretKeyModal"
-                                                        data-value="3Yrfw2TXCjBz78uL0MqsRAivOPKhgyFxNzLaenhK"
-                                                        data-bs-toggle="tooltip"
-                                                        title="Click View"
-                                                        class="fas fa-eye text-primary view-secret-key-icon"></a>
+                                                        data-value="bP2rXzQmWnGy7v9sJk0hL8aUdEcVfItZoXqP1uRkB"
+                                                        class="text-primary">
+                                                            <span title="Click View" data-bs-toggle="tooltip"  class="fas fa-eye  view-secret-key-icon"></span>
+                                                    </a>
                                                 </td>
                                                 <td>
                                                     <a href="javascript:;" class="btn btn-sm btn-warning btn-edit-app">
@@ -464,12 +464,11 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <a href="javascript:;" data-bs-toggle="modal"
-                                                        data-bs-tooltip="Click View"
                                                         data-bs-target="#viewSecretKeyModal"
-                                                        data-value="mP9zXVk78Wq1NeYTLFu0CkRyABOdgxvMsJi3qrUZ"
-                                                        data-bs-toggle="tooltip"
-                                                        title="Click View"
-                                                        class="fas fa-eye text-primary view-secret-key-icon"></a>
+                                                        data-value="eD5gFjKcHlM1oN2pQrStUvWxYzAbCdEfGhIjK3lM"
+                                                        class="text-primary">
+                                                            <span title="Click View" data-bs-toggle="tooltip"  class="fas fa-eye  view-secret-key-icon"></span>
+                                                    </a>
                                                 </td>
                                                 <td>
                                                     <a href="javascript:;" class="btn btn-sm btn-warning btn-edit-app">
@@ -510,10 +509,10 @@
                                                 <td class="text-center">
                                                     <a href="javascript:;" data-bs-toggle="modal"
                                                         data-bs-target="#viewSecretKeyModal"
-                                                        data-value="7YrKYCNhsjBz78uL0MqsRAivOPKhgyFxNzLaehLa"
-                                                        data-bs-toggle="tooltip"
-                                                        title="Click View"
-                                                        class="fas fa-eye text-primary view-secret-key-icon"></a>
+                                                        data-value="8tZaVbGcNfDhJeKlMiNoPqRsTuVwXyZ0aBcDeFgH"
+                                                        class="text-primary">
+                                                            <span title="Click View" data-bs-toggle="tooltip"  class="fas fa-eye  view-secret-key-icon"></span>
+                                                    </a>
                                                 </td>
                                                 <td>
                                                     <a href="javascript:;" class="btn btn-sm btn-warning btn-edit-app">
@@ -660,7 +659,7 @@
 
                 <div class="modal-header">
                     <h5 class="modal-title" id="viewSecretKeyModalLabel">Secret Key</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close closeModalSecret" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
                 <div class="modal-body mb-4">
@@ -728,6 +727,11 @@
             });
 
             $('.view-secret-key-icon').tooltip();
+
+            $('#viewSecretKeyModal').on('hidden.bs.modal', function () {
+                $('.view-secret-key-icon').tooltip('dispose').tooltip();
+                $('.tooltip').remove();
+            });
 
             let $rowToDelete = null;
 
