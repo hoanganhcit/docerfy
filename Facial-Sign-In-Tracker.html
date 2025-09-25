@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Dashboard - Axiam AI</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="">
+    <!-- Canonical SEO -->
+    <link rel="canonical" href="">
+
+    <!-- Favicon -->
+    <link rel="stylesheet" href="assets/css/tabler-icons.css" />
+    <link rel="icon" type="image/x-icon" href="assets/images/icon1.png" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="assets/css/core.css" />
+    <link rel="stylesheet" href="assets/css/theme-default.css" />
+    <link rel="stylesheet" href="assets/css/dataTable.css" />
+    <link rel="stylesheet" href="assets/css/apex-charts.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/styles.v2.css" />
+
+    <!-- PAGE CSS -->
+
+
+    <!-- Helpers -->
+    <script src="assets/js/helpers.js"></script>
+    <script src="assets/js/config.js"></script>
+
+</head>
+
+<body>
+    <div class="layout-wrapper layout-content-navbar  ">
+        <div class="layout-container">
+            <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+                <div class="app-brand demo ">
+                    <a href="dashboard.html" class="app-brand-link">
+                        <span class="app-brand-logo demo">
+                            <img src="assets/images/icon1.png" alt="" style="height: 35px;">
+                        </span>
+                        <span class="app-brand-text demo menu-text ">Axiam</span>
+                    </a>
+                    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
+                        <i class="fal fa-scrubber menu-toggle-icon d-none d-xl-block align-middle"></i>
+                        <i class="fal fal-times d-block d-xl-none align-middle"></i>
+                    </a>
+                </div>
+                <div class="menu-inner-shadow"></div>
+                <ul class="menu-inner py-1">
+                    <li class="menu-item  ">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle active">
+                            <i class="menu-icon tf-icons fal fa-server"></i>
+                            <div>Server Access</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item active">
+                                <a href="Dashboard.html" class="menu-link">
+                                    <div>Dashboard</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="Server.html" class="menu-link">
+                                    <div>Servers</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <div>Developers</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-link">
+                                    <div>Roles</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item open">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons fal fa-user-shield"></i>
+                            <div>Facial-Sign In</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item ">
+                                <a href="Facial-Sign-On-Apps.html" class="menu-link">
+                                    <div>Apps</div>
+                                </a>
+                            </li>
+                            <li class="menu-item ">
+                                <a href="Facial-Sign-On-Users.html" class="menu-link">
+                                    <div>Users</div>
+                                </a>
+                            </li>
+                            <li class="menu-item active">
+                                <a href="Facial-Sign-In-Tracker.html" class="menu-link">
+                                    <div>Login Tracker</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+            <div class="layout-page">
+                <nav class="layout-navbar container-fluid navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                    id="layout-navbar">
+                    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0   d-xl-none ">
+                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                            <i class="ti ti-menu-2 ti-sm"></i>
+                        </a>
+                    </div>
+                    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                        <!-- Search -->
+                        <div class="navbar-nav align-items-center">
+                            <div class="nav-item navbar-search-wrapper mb-0">
+                                <div class="py-3">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/authenticator/dashboard">Axiam</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Facial-Sign On</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Users</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Search -->
+                        <ul class="navbar-nav flex-row align-items-center ms-auto">
+                            <!-- User -->
+                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
+                                    data-bs-toggle="dropdown">
+                                    <div class="avatar avatar-online">
+                                        <img src="assets/images/1.png" alt="" class="h-auto rounded-circle">
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a class="dropdown-item" href="profile.html">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <div class="avatar avatar-online">
+                                                        <img src="assets/images/1.png" alt=""
+                                                            class="h-auto rounded-circle">
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <span class="fw-medium d-block">David Ahola</span>
+                                                    <small class="text-muted">Admin</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="Profile.html">
+                                            <i class="ti ti-user-check me-2 ti-sm"></i>
+                                            <span class="align-middle">My Profile</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="Teams.html">
+                                            <i class="ti ti-users me-2 ti-sm"></i>
+                                            <span class="align-middle">Teams</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="Packages.html">
+                                            <span class="d-flex align-items-center align-middle">
+                                                <i class="flex-shrink-0 ti ti-credit-card me-2 ti-sm"></i>
+                                                <span class="flex-grow-1 align-middle">Upgrade Package</span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="auth-login-cover.html" target="_blank">
+                                            <i class="ti ti-logout me-2 ti-sm"></i>
+                                            <span class="align-middle">Log Out</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--/ User -->
+                        </ul>
+                    </div>
+                </nav>
+                <!-- Copy Content Start -->
+                <div class="container-fluid pb-100">
+                    <div class="row mt-4 g-3">
+                        <div class="col-12 col-md-4">
+                            <div class="p-3 rounded-3 kpi d-flex align-items-center gap-2 h-100">
+                                <div class="small-muted">Range</div>
+                                <div class="ms-auto btn-group gap-2" role="group">
+                                    <button class="btn btn-sm btn-ghost status rounded  range-btn active"
+                                        data-range="24h">24h</button>
+                                    <button class="btn btn-sm btn-ghost status rounded  range-btn"
+                                        data-range="7d">7d</button>
+                                    <button class="btn btn-sm btn-ghost status rounded  range-btn"
+                                        data-range="30d">30d</button>
+                                    <button class="btn btn-sm btn-ghost status rounded  range-btn"
+                                        data-range="all">all</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="p-3 rounded-3 kpi d-flex align-items-center gap-2 h-100">
+                                <div class="small-muted">Outcome</div>
+                                <div class="ms-auto btn-group gap-2">
+                                    <button class="btn btn-sm btn-ghost status rounded outcome-btn active"
+                                        data-outcome="all">all</button>
+                                    <button class="btn btn-sm btn-ghost status rounded  outcome-btn"
+                                        data-outcome="success">success</button>
+                                    <button class="btn btn-sm btn-ghost status rounded  outcome-btn"
+                                        data-outcome="failure">failure</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="p-3 rounded-3 kpi d-flex align-items-center gap-2 h-100">
+                                <input id="searchInput" class="form-control form-control-sm border-0 fs-15"
+                                    placeholder="Search email, IP, device, browser…">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- KPI Row -->
+                    <div class="row mt-3 g-3">
+                        <div class="col-6 col-md-3">
+                            <div class="p-3 rounded-3 kpi card-soft h-100">
+                                <div class="small-muted">Total Logins</div>
+                                <div id="kpiTotal" class="h4 fw-bold">0</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="p-3 rounded-3 kpi card-soft h-100">
+                                <div class="small-muted">Success Rate</div>
+                                <div id="kpiSuccessRate" class="h4 fw-bold mb-1">0%</div>
+                                <div class="muted-xs" id="kpiSuccessCount">0 / 0</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="p-3 rounded-3 kpi card-soft h-100">
+                                <div class="small-muted">Failures</div>
+                                <div id="kpiFailures" class="h4 fw-bold">0</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="p-3 rounded-3 kpi card-soft h-100">
+                                <div class="small-muted">Unique Users</div>
+                                <div id="kpiUnique" class="h4 fw-bold">0</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trend -->
+                    <div class="kpi card-soft p-3 mt-4 mb-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="fw-semibold">14‑Day Login Volume <span class="muted-xs">(filtered)</span></div>
+                            <div class="muted-xs">&nbsp;</div>
+                        </div>
+                        <div id="sparkline" class="mt-2 spark"></div>
+                    </div>
+
+                    <div class="card bg-white mt-4">
+                        <div class="card-body">
+                            <div class="list_servers">
+                                <div class="folder-wrap document-listviewtable-responsive">
+                                    <table class="table mb-0 align-middle">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Time</th>
+                                                <th>Face</th>
+                                                <th>User</th>
+                                                <th>Outcome</th>
+                                                <th>Risk</th>
+                                                <th>IP</th>
+                                                <th>Geo</th>
+                                                <th class="d-none d-md-table-cell">Device</th>
+                                                <th class="d-none d-md-table-cell">Browser</th>
+                                                <th class="text-end">Reason</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tableBody"></tbody>
+                                    </table>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center p-3 border-top"
+                                    style="border-color:var(--border)">
+                                    <div class="muted-xs" id="eventsSummary">0 events</div>
+                                    <div class="d-flex gap-2 align-items-center">
+                                        <button id="prevPage" class="btn btn-sm btn-outline-secondary">Prev</button>
+                                        <div id="pageInfo" class="px-2 muted-xs">Page 1 / 1</div>
+                                        <button id="nextPage" class="btn btn-sm btn-outline-secondary">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Content End -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Delete -->
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirm Delete</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete this user?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" id="confirmDeleteBtn" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Core JS -->
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/popper.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="assets/js/menu.js"></script>
+
+    <!-- Main JS -->
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script>
+
+        let $rowToDelete = null;
+
+        $('.btn-delete-user').on('click', function () {
+            $rowToDelete = $(this).closest('tr');
+            $('#confirmDeleteModal').modal('show');
+        });
+
+        $('#confirmDeleteBtn').on('click', function () {
+            if ($rowToDelete) {
+                $rowToDelete.remove();
+                $rowToDelete = null;
+                $('#confirmDeleteModal').modal('hide');
+            }
+        });
+    </script>
+    <script>
+        (() => {
+            // ---------- Constants ----------
+            const pageSize = 12;
+
+            // ---------- Mock data seed ----------
+            function seedMock() {
+                const now = Date.now();
+                const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+                const users = [
+                    { id: 'u_001', email: 'alice@company.com' },
+                    { id: 'u_002', email: 'bob@company.com' },
+                    { id: 'u_003', email: 'carol@company.com' },
+                    { id: 'u_004', email: 'dave@company.com' },
+                    { id: 'u_005', email: 'erin@company.com' }
+                ];
+                const countries = ['CA', 'US', 'GB', 'DE', 'VN'];
+                const devices = ['iPhone 15', 'Pixel 8', 'Galaxy S24', 'MacBook Pro', 'Surface Pro'];
+                const browsers = ['Safari', 'Chrome', 'Edge', 'Firefox'];
+                const reasons = ['liveness_failed', 'face_mismatch', 'policy_block', 'network_error'];
+                const events = [];
+                for (let i = 0; i < 24; i++) {
+                    const t = new Date(now - Math.random() * 1000 * 60 * 60 * 24 * 28);
+                    const u = pick(users);
+                    const success = Math.random() > 0.12;
+                    const risk = Math.max(0, Math.min(100, Math.round((Math.random() * 40) + (success ? 10 : 60))));
+                    const faceUrl = `https://i.pravatar.cc/96?u=${encodeURIComponent(u.email)}`;
+                    events.push({
+                        id: `evt_${i}_${Math.random().toString(36).slice(2, 8)}`,
+                        ts: t.toISOString(),
+                        userId: u.id,
+                        email: u.email,
+                        outcome: success ? 'success' : 'failure',
+                        riskScore: risk,
+                        ip: `192.168.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}`,
+                        country: pick(countries),
+                        device: pick(devices),
+                        browser: pick(browsers),
+                        reason: success ? '' : pick(reasons),
+                        faceUrl
+                    });
+                }
+                return events.sort((a, b) => new Date(b.ts) - new Date(a.ts));
+            }
+
+            // ---------- State ----------
+            let events = seedMock();
+            let range = '7d';
+            let outcome = 'all';
+            let query = '';
+            let page = 1;
+
+            // ---------- Helpers ----------
+            function toDateKey(d) { const x = new Date(d.getFullYear(), d.getMonth(), d.getDate()); return x.toISOString(); }
+            function within(ts, from) { return new Date(ts).getTime() >= from.getTime(); }
+            function fmtPct(n) { return (n * 100).toFixed(1) + '%'; }
+
+            function csvExport(rows) {
+                const headers = ['id', 'timestamp', 'userId', 'email', 'outcome', 'risk', 'ip', 'country', 'device', 'browser', 'reason', 'face_url'];
+                const lines = [headers.join(',')];
+                rows.forEach(r => {
+                    const line = headers.map(h => {
+                        const v = (h === 'timestamp' ? r.ts : (h === 'risk' ? r.riskScore : (h === 'face_url' ? r.faceUrl : r[h])));
+                        const s = v == null ? '' : String(v);
+                        return /[",]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+                    }).join(',');
+                    lines.push(line);
+                });
+                const blob = new Blob([lines.join('')], { type: 'text/csv;charset=utf-8;' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `axiam_facial_login_events_${Date.now()}.csv`;
+                a.click();
+                URL.revokeObjectURL(url);
+            }
+
+            // ---------- Rendering ----------
+            function computeFromDate() {
+                const now = new Date();
+                if (range === '24h') return new Date(now.getTime() - 24 * 60 * 60 * 1000);
+                if (range === '7d') return new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+                if (range === '30d') return new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+                return new Date(0);
+            }
+
+            function getFiltered() {
+                const fromDate = computeFromDate();
+                const q = query.trim().toLowerCase();
+                return events.filter(e => (
+                    within(e.ts, fromDate) &&
+                    (outcome === 'all' || e.outcome === outcome) &&
+                    (!q || [e.email, e.ip, e.country, e.device, e.browser].some(x => String(x).toLowerCase().includes(q)))
+                ));
+            }
+
+            function computeKPIs(filtered) {
+                const total = filtered.length;
+                const succ = filtered.filter(e => e.outcome === 'success').length;
+                const fail = total - succ;
+                const uniq = new Set(filtered.map(e => e.userId)).size;
+                const rate = total ? succ / total : 0;
+                return { total, succ, fail, uniq, rate };
+            }
+
+            function seriesByDay(filtered) {
+                const days = 14;
+                const map = new Map();
+                for (let i = days - 1; i >= 0; i--) {
+                    const d = new Date();
+                    d.setHours(0, 0, 0, 0);
+                    d.setDate(d.getDate() - i);
+                    map.set(toDateKey(d), 0);
+                }
+                filtered.forEach(e => {
+                    const d = new Date(e.ts);
+                    d.setHours(0, 0, 0, 0);
+                    const key = toDateKey(d);
+                    if (map.has(key)) map.set(key, (map.get(key) || 0) + 1);
+                });
+                return Array.from(map.values());
+            }
+
+            function renderKPIs(kpis) {
+                $('#kpiTotal').text(kpis.total);
+                $('#kpiSuccessRate').text(fmtPct(kpis.rate));
+                $('#kpiSuccessCount').text(`${kpis.succ} / ${kpis.total}`);
+                $('#kpiFailures').text(kpis.fail);
+                $('#kpiUnique').text(kpis.uniq);
+            }
+
+            // tiny sparkline using inline SVG
+            function renderSpark(points) {
+                const w = 560, h = 60;
+                if (!points || !points.length) { $('#sparkline').html(''); return; }
+                const xs = points.map((_, i) => (i / (Math.max(1, points.length - 1))) * (w - 8) + 4);
+                const min = Math.min(...points), max = Math.max(...points);
+                const ys = points.map(v => (max === min ? h / 2 : h - ((v - min) / (max - min)) * (h - 8) - 4));
+                const d = xs.map((x, i) => `${i === 0 ? 'M' : 'L'}${x.toFixed(1)},${ys[i].toFixed(1)}`).join(' ');
+                const svg = `<svg width="${w}" height="${h}" role="img"><path d="${d}" fill="none" stroke="${getComputedStyle(document.documentElement).getPropertyValue('--accent') || '#2563eb'}" stroke-width="2" opacity="0.9"/></svg>`;
+                $('#sparkline').html(svg);
+            }
+
+            function renderTablePage(filtered) {
+                const start = (page - 1) * pageSize;
+                const paged = filtered.slice(start, start + pageSize);
+                const $tbody = $('#tableBody').empty();
+                if (!paged.length) {
+                    $tbody.append(`<tr><td colspan="10" class="text-center py-4 text-muted">No events for this filter.</td></tr>`);
+                }
+                paged.forEach(r => {
+                    const outcomeBadge = r.outcome === 'success' ? `<span class="badge badge-success">success</span>` : `<span class="badge badge-danger">failure</span>`;
+                    let riskClass = 'badge badge-success';
+                    if (r.riskScore >= 70) riskClass = 'badge badge-danger';
+                    else if (r.riskScore >= 40) riskClass = 'badge color-pending';
+                    const row = `<tr class="align-middle">
+      <td style="white-space:nowrap">${new Date(r.ts).toLocaleString()}</td>
+      <td><div class="d-flex align-items-center gap-2"><img src="${r.faceUrl}" alt="${r.email}" class="face-thumb"/><div class="muted-xs">thumb</div></div></td>
+      <td><div class="fw-medium">${r.email}</div><div class="muted-xs">${r.userId}</div></td>
+      <td>${outcomeBadge}</td>
+      <td><span class="${riskClass}">${r.riskScore}</span></td>
+      <td>${r.ip}</td>
+      <td>${r.country}</td>
+      <td class="d-none d-md-table-cell">${r.device}</td>
+      <td class="d-none d-md-table-cell">${r.browser}</td>
+      <td class="text-end">${r.reason || '—'}</td>
+    </tr>`;
+                    $tbody.append(row);
+                });
+                const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+                $('#eventsSummary').text(`${filtered.length} events`);
+                $('#pageInfo').text(`Page ${page} / ${totalPages}`);
+                $('#prevPage').prop('disabled', page === 1);
+                $('#nextPage').prop('disabled', page >= totalPages);
+            }
+
+            function rerender() {
+                const filtered = getFiltered();
+                const kpis = computeKPIs(filtered);
+                renderKPIs(kpis);
+                renderSpark(seriesByDay(filtered));
+                renderTablePage(filtered);
+                $('#year').text(new Date().getFullYear());
+            }
+
+            // ---------- Event wiring ----------
+            $(function () {
+                rerender();
+
+                // range buttons
+                $('.range-btn').on('click', function () {
+                    $('.range-btn').removeClass('active');
+                    $(this).addClass('active');
+                    range = $(this).data('range');
+                    page = 1;
+                    rerender();
+                });
+                $('.outcome-btn').on('click', function () {
+                    $('.outcome-btn').removeClass('active');
+                    $(this).addClass('active');
+                    outcome = $(this).data('outcome');
+                    page = 1;
+                    rerender();
+                });
+                $('#searchInput').on('input', function () { query = $(this).val(); page = 1; rerender(); });
+
+                $('#prevPage').on('click', function () { page = Math.max(1, page - 1); rerender(); });
+                $('#nextPage').on('click', function () {
+                    const filtered = getFiltered();
+                    const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+                    if (page < totalPages) page++;
+                    rerender();
+                });
+
+                $('#exportCsv').on('click', function () { const filtered = getFiltered(); csvExport(filtered); });
+            });
+
+            // expose some functions for console debugging
+            window.axiam = { seedMock, rerender };
+
+        })();
+
+    </script>
+</body>
+
+</html>

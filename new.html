@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Axiam — Facial Sign‑In Login Tracker (HTML + Bootstrap + jQuery)</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Light tone styling tweaks */
+        body {
+            background: #f8fafc;
+            color: #0f172a;
+        }
+
+        .card-ghost {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(2, 6, 23, 0.06);
+        }
+
+        .badge-risk-low {
+            background: rgba(16, 185, 129, 0.12);
+            color: #065f46;
+            border: 1px solid rgba(16, 185, 129, 0.18);
+        }
+
+        .badge-risk-mid {
+            background: rgba(245, 158, 11, 0.12);
+            color: #78350f;
+            border: 1px solid rgba(245, 158, 11, 0.18);
+        }
+
+        .badge-risk-high {
+            background: rgba(239, 68, 68, 0.12);
+            color: #7f1d1d;
+            border: 1px solid rgba(239, 68, 68, 0.18);
+        }
+
+        .thumb {
+            width: 32px;
+            height: 32px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 1px solid rgba(2, 6, 23, 0.06);
+        }
+
+        .table thead th {
+            font-weight: 600;
+        }
+
+        .sparkline {
+            width: 100%;
+            height: 60px;
+        }
+
+        .control-pill .btn {
+            border-radius: 999px;
+        }
+
+        .muted-xs {
+            color: #475569;
+            font-size: 0.78rem;
+        }
+
+        .kbd-small {
+            font-size: 0.75rem;
+            padding: 0.15rem 0.35rem;
+            border-radius: 0.35rem;
+            background: #eef2ff;
+            border: 1px solid #e0e7ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-4">
+        <header class="d-flex align-items-center mb-4">
+            <div class="rounded-3 bg-primary text-white d-flex align-items-center justify-content-center"
+                style="width:48px;height:48px;font-weight:700;">AX</div>
+            <div class="ms-3">
+                <h4 class="mb-0">Axiam — Facial Sign‑In Login Tracker</h4>
+                <div class="muted-xs">Monitor sign‑ins, face thumbnails, and risk in real time — light UI</div>
+            </div>
+            <div class="ms-auto d-flex gap-2">
+                <button id="btn-add" class="btn btn-outline-primary">+ Add Random Event</button>
+                <button id="btn-export" class="btn btn-outline-secondary">Export CSV</button>
+            </div>
+        </header>
+
+        <!-- Filters -->
+        <div class="row g-2 mb-3">
+            <div class="col-md-4">
+                <div class="card card-ghost p-2 d-flex align-items-center">
+                    <div class="w-100 d-flex align-items-center">
+                        <span class="muted-xs">Range</span>
+                        <div class="ms-auto control-pill">
+                            <div class="btn-group" role="group" aria-label="Range">
+                                <button class="btn btn-sm btn-outline-secondary" data-range="24h">24h</button>
+                                <button class="btn btn-sm btn-outline-secondary active" data-range="7d">7d</button>
+                                <button class="btn btn-sm btn-outline-secondary" data-range="30d">30d</button>
+                                <button class="btn btn-sm btn-outline-secondary" data-range="all">All</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card card-ghost p-2 d-flex align-items-center">
+                    <div class="w-100 d-flex align-items-center">
+                        <span class="muted-xs">Outcome</span>
+                        <div class="ms-auto control-pill">
+                            <div class="btn-group" role="group" aria-label="Outcome">
+                                <button class="btn btn-sm btn-outline-secondary active" data-outcome="all">All</button>
+                                <button class="btn btn-sm btn-outline-secondary" data-outcome="success">Success</button>
+                                <button class="btn btn-sm btn-outline-secondary" data-outcome="failure">Failure</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card card-ghost p-2 d-flex align-items-center">
+                    <input id="search" class="form-control form-control-sm"
+                        placeholder="Search email, IP, device, browser…">
+                </div>
+            </div>
+        </div>
+
+        <!-- KPI Row -->
+        <div class="row g-3 mb-3">
+            <div class="col-6 col-md-3">
+                <div class="card card-ghost p-3">
+                    <div class="muted-xs">Total Logins</div>
+                    <div class="h3 mb-0" id="kpi-total">0</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card card-ghost p-3">
+                    <div class="muted-xs">Success Rate</div>
+                    <div class="h3 mb-0" id="kpi-rate">0%</div>
+                    <div class="muted-xs" id="kpi-success-detail"></div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card card-ghost p-3">
+                    <div class="muted-xs">Failures</div>
+                    <div class="h3 mb-0" id="kpi-fail">0</div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card card-ghost p-3">
+                    <div class="muted-xs">Unique Users</div>
+                    <div class="h3 mb-0" id="kpi-uniq">0</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trend -->
+        <div class="card card-ghost p-3 mb-3">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <h6 class="mb-0">14‑Day Login Volume <small class="text-muted">(filtered)</small></h6>
+                </div>
+                <div class="muted-xs">Sparkline</div>
+            </div>
+            <div class="mt-2"><svg id="sparkline" class="sparkline" viewBox="0 0 560 60"
+                    preserveAspectRatio="none"></svg></div>
+        </div>
+
+        <!-- Table -->
+        <div class="card card-ghost mb-3">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0 text-sm align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Time</th>
+                            <th>Face</th>
+                            <th>User</th>
+                            <th>Outcome</th>
+                            <th>Risk</th>
+                            <th>IP</th>
+                            <th>Geo</th>
+                            <th class="d-none d-md-table-cell">Device</th>
+                            <th class="d-none d-md-table-cell">Browser</th>
+                            <th class="text-end">Reason</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body"></tbody>
+                </table>
+            </div>
+            <div class="d-flex align-items-center justify-content-between p-2 border-top">
+                <div class="text-muted small" id="table-count">0 events</div>
+                <div class="d-flex align-items-center gap-2">
+                    <button id="prev-page" class="btn btn-sm btn-outline-secondary">Prev</button>
+                    <div class="px-2">Page <span id="page-num">1</span> / <span id="page-total">1</span></div>
+                    <button id="next-page" class="btn btn-sm btn-outline-secondary">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dev Tests -->
+        <details class="card card-ghost p-2">
+            <summary class="fw-bold">DEV Tests</summary>
+            <ul id="dev-tests" class="small mt-2"></ul>
+        </details>
+
+        <footer class="text-center text-muted small mt-4">© <span id="year"></span> Axiam — Facial Sign‑In</footer>
+    </div>
+
+    <!-- jQuery + Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Keep same storage key
+        const STORAGE_KEY = 'axiam_facial_logins';
+        const pageSize = 12;
+
+        // ---------- Mock data ----------
+        function seedMock() {
+            const now = Date.now();
+            const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
+            const users = [
+                { id: 'u_001', email: 'alice@company.com' },
+                { id: 'u_002', email: 'bob@company.com' },
+                { id: 'u_003', email: 'carol@company.com' },
+                { id: 'u_004', email: 'dave@company.com' },
+                { id: 'u_005', email: 'erin@company.com' }
+            ];
+            const countries = ['CA', 'US', 'GB', 'DE', 'VN'];
+            const devices = ['iPhone 15', 'Pixel 8', 'Galaxy S24', 'MacBook Pro', 'Surface Pro'];
+            const browsers = ['Safari', 'Chrome', 'Edge', 'Firefox'];
+            const reasons = ['liveness_failed', 'face_mismatch', 'policy_block', 'network_error'];
+
+            const events = [];
+            for (let i = 0; i < 50; i++) {
+                const t = new Date(now - Math.random() * 1000 * 60 * 60 * 24 * 28);
+                const u = pick(users);
+                const success = Math.random() > 0.12;
+                const risk = Math.max(0, Math.min(100, Math.round((Math.random() * 40) + (success ? 10 : 60))));
+                const faceUrl = `https://i.pravatar.cc/96?u=${encodeURIComponent(u.email)}`;
+                events.push({
+                    id: `evt_${i}_${Math.random().toString(36).slice(2, 8)}`,
+                    ts: t.toISOString(),
+                    userId: u.id,
+                    email: u.email,
+                    outcome: success ? 'success' : 'failure',
+                    riskScore: risk,
+                    ip: `192.168.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}`,
+                    country: pick(countries),
+                    device: pick(devices),
+                    browser: pick(browsers),
+                    reason: success ? '' : pick(reasons),
+                    faceUrl
+                });
+            }
+            // sort desc
+            events.sort((a, b) => new Date(b.ts) - new Date(a.ts));
+            return events;
+        }
+
+        function loadEvents() {
+            try {
+                const raw = localStorage.getItem(STORAGE_KEY);
+                if (!raw) return seedMock();
+                const parsed = JSON.parse(raw);
+                if (!Array.isArray(parsed)) return seedMock();
+                return parsed;
+            } catch (e) { return seedMock(); }
+        }
+        function saveEvents(evts) { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(evts)); } catch (e) { } }
+
+        function addRandomEvent(existing) {
+            const mock = seedMock();
+            const e = mock[Math.floor(Math.random() * mock.length)];
+            const now = new Date().toISOString();
+            const newEvt = Object.assign({}, e, { id: `evt_live_${Math.random().toString(36).slice(2)}`, ts: now });
+            return [newEvt].concat(existing);
+        }
+
+        // ---------- Helpers ----------
+        function fmtPct(n) { return (n * 100).toFixed(1) + '%'; }
+        function toDateKey(d) { const dd = new Date(d.getFullYear(), d.getMonth(), d.getDate()); return dd.toISOString(); }
+        function within(ts, from) { return new Date(ts).getTime() >= from.getTime(); }
+
+        // CSV export
+        function csvExport(rows) {
+            const headers = ["id", "timestamp", "userId", "email", "outcome", "risk", "ip", "country", "device", "browser", "reason", "face_url"];
+            const lines = [headers.join(',')].concat(rows.map(r => {
+                return headers.map(h => {
+                    let v = '';
+                    if (h === 'timestamp') v = r.ts;
+                    else if (h === 'risk') v = r.riskScore;
+                    else if (h === 'face_url') v = r.faceUrl;
+                    else v = r[h] || '';
+                    const s = String(v);
+                    return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+                }).join(',');
+            }));
+            const blob = new Blob([lines.join('\n')], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a'); a.href = url; a.download = `axiam_facial_login_events_${Date.now()}.csv`; a.click(); URL.revokeObjectURL(url);
+        }
+
+        // Sparkline
+        function drawSparkline(points) {
+            const svg = $('#sparkline'); svg.empty();
+            const w = 560, h = 60; if (!points || !points.length) return svg.attr('viewBox', `0 0 ${w} ${h}`);
+            const pad = 4; const xs = points.map((_, i) => (i / (Math.max(1, points.length - 1))) * (w - 2 * pad) + pad);
+            const min = Math.min(...points), max = Math.max(...points);
+            const ys = points.map(v => max === min ? h / 2 : h - ((v - min) / (max - min)) * (h - 2 * pad) - pad);
+            const d = xs.map((x, i) => (i === 0 ? 'M' : 'L') + x.toFixed(1) + ',' + ys[i].toFixed(1)).join(' ');
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path'); path.setAttribute('d', d); path.setAttribute('fill', 'none'); path.setAttribute('stroke', 'currentColor'); path.setAttribute('stroke-width', '2'); path.setAttribute('opacity', '0.9');
+            svg.append(path);
+        }
+
+        // ---------- State & Rendering ----------
+        let events = loadEvents();
+        let range = '7d';
+        let outcome = 'all';
+        let query = '';
+        let page = 1;
+
+        function fromDateForRange(r) { const now = new Date(); if (r === '24h') return new Date(now.getTime() - 24 * 60 * 60 * 1000); if (r === '7d') return new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000); if (r === '30d') return new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000); return new Date(0); }
+
+        function filteredEvents() {
+            const from = fromDateForRange(range);
+            const q = (query || '').trim().toLowerCase();
+            return events.filter(e => (
+                within(e.ts, from) && (outcome === 'all' || e.outcome === outcome) && (!q || [e.email, e.ip, e.country, e.device, e.browser].some(x => String(x || '').toLowerCase().includes(q)))
+            ));
+        }
+
+        function computeKPIs(filtered) {
+            const total = filtered.length;
+            const succ = filtered.filter(e => e.outcome === 'success').length;
+            const fail = total - succ;
+            const uniq = new Set(filtered.map(e => e.userId)).size;
+            const rate = total ? succ / total : 0;
+            return { total, succ, fail, uniq, rate };
+        }
+
+        function seriesByDay(filtered) {
+            const days = 14; const map = new Map();
+            for (let i = days - 1; i >= 0; i--) { const d = new Date(); d.setHours(0, 0, 0, 0); d.setDate(d.getDate() - i); map.set(toDateKey(d), 0); }
+            filtered.forEach(e => { const d = new Date(e.ts); d.setHours(0, 0, 0, 0); const k = toDateKey(d); if (map.has(k)) map.set(k, (map.get(k) || 0) + 1); });
+            return Array.from(map.values());
+        }
+
+        function render() {
+            const filt = filteredEvents();
+            const k = computeKPIs(filt);
+            $('#kpi-total').text(k.total);
+            $('#kpi-rate').text(fmtPct(k.rate));
+            $('#kpi-success-detail').text(`${k.succ} / ${k.total}`);
+            $('#kpi-fail').text(k.fail);
+            $('#kpi-uniq').text(k.uniq);
+
+            const series = seriesByDay(filt); drawSparkline(series);
+
+            // pagination
+            const totalPages = Math.max(1, Math.ceil(filt.length / pageSize));
+            page = Math.min(Math.max(1, page), totalPages);
+            $('#page-num').text(page); $('#page-total').text(totalPages);
+            $('#table-count').text(`${filt.length} events`);
+
+            const start = (page - 1) * pageSize; const rows = filt.slice(start, start + pageSize);
+            const $tbody = $('#table-body'); $tbody.empty();
+            if (!rows.length) { $tbody.append('<tr><td colspan="10" class="text-center py-4 text-muted">No events for this filter.</td></tr>'); }
+            rows.forEach(r => {
+                const $tr = $('<tr>').addClass('align-middle');
+                $tr.append($('<td>').text(new Date(r.ts).toLocaleString()));
+                const $face = $('<td>').append($('<img>').attr('src', r.faceUrl).attr('alt', r.email).addClass('thumb me-2')).append($('<span>').addClass('muted-xs').text('thumb'));
+                $tr.append($face);
+                $tr.append($('<td>').html(`<div class="fw-semibold">${r.email}</div><div class="muted-xs">${r.userId}</div>`));
+                const outcomeBadge = r.outcome === 'success' ? '<span class="badge bg-success">success</span>' : '<span class="badge bg-danger">failure</span>';
+                $tr.append($('<td>').html(outcomeBadge));
+                // risk badge
+                let rb = `<span class="px-2 py-1 rounded-1 muted-xs badge-risk-low">${r.riskScore}</span>`;
+                if (r.riskScore >= 70) rb = `<span class="px-2 py-1 rounded-1 muted-xs badge-risk-high">${r.riskScore}</span>`;
+                else if (r.riskScore >= 40) rb = `<span class="px-2 py-1 rounded-1 muted-xs badge-risk-mid">${r.riskScore}</span>`;
+                $tr.append($('<td>').html(rb));
+                $tr.append($('<td>').text(r.ip));
+                $tr.append($('<td>').text(r.country));
+                $tr.append($('<td>').addClass('d-none d-md-table-cell').text(r.device));
+                $tr.append($('<td>').addClass('d-none d-md-table-cell').text(r.browser));
+                $tr.append($('<td>').addClass('text-end').text(r.reason || '—'));
+                $tbody.append($tr);
+            });
+
+            // enable/disable page buttons
+            $('#prev-page').prop('disabled', page === 1);
+            $('#next-page').prop('disabled', page >= totalPages);
+
+            // save events
+            saveEvents(events);
+
+            // dev tests
+            renderDevTests(events, filt, k);
+        }
+
+        function renderDevTests(all, filtered, kpis) {
+            const T = [];
+            const assert = (name, cond, msg = '') => T.push({ name, pass: !!cond, msg: cond ? '' : msg });
+            assert('events array exists', Array.isArray(all), 'events not array');
+            assert('event fields present', all.length === 0 || ('id' in all[0] && 'ts' in all[0] && 'email' in all[0] && 'faceUrl' in all[0]), 'missing base fields');
+            const recompute = (() => { const total = filtered.length; const succ = filtered.filter(e => e.outcome === 'success').length; const rate = total ? succ / total : 0; return { total, succ, rate }; })();
+            assert('kpi.total matches filtered length', kpis.total === recompute.total, `${kpis.total} != ${recompute.total}`);
+            assert('kpi.succ count matches', kpis.succ === recompute.succ, `${kpis.succ} != ${recompute.succ}`);
+            assert('kpi.rate sane', kpis.rate >= 0 && kpis.rate <= 1, `rate=${kpis.rate}`);
+            const q = 'alice@company.com';
+            const anyAlice = filtered.some(e => e.email === q);
+            assert('search yields logical results', filtered.length === 0 || (anyAlice || filtered.length < all.length), 'filter too strict?');
+            assert('faceUrl looks like URL', all.length === 0 || /^https?:\/\//.test(all[0].faceUrl), 'faceUrl not URL');
+
+            const $ul = $('#dev-tests'); $ul.empty();
+            T.forEach(t => { const $li = $('<li>').text((t.pass ? '✓ ' : '✗ ') + t.name + (t.pass ? '' : ' — ' + t.msg)).addClass(t.pass ? 'text-success' : 'text-danger'); $ul.append($li); });
+        }
+
+        // ---------- Events ----------
+        $(function () {
+            $('#year').text(new Date().getFullYear());
+
+            // wire buttons: range
+            $('[data-range]').on('click', function () { $('[data-range]').removeClass('active'); $(this).addClass('active'); range = $(this).data('range'); page = 1; render(); });
+            // outcome
+            $('[data-outcome]').on('click', function () { $('[data-outcome]').removeClass('active'); $(this).addClass('active'); outcome = $(this).data('outcome'); page = 1; render(); });
+            // search
+            let searchTimer = null; $('#search').on('input', function () { query = $(this).val(); page = 1; clearTimeout(searchTimer); searchTimer = setTimeout(() => render(), 250); });
+
+            // add random
+            $('#btn-add').on('click', function () { events = addRandomEvent(events); page = 1; render(); });
+            // export
+            $('#btn-export').on('click', function () { csvExport(filteredEvents()); });
+
+            // pagination
+            $('#prev-page').on('click', function () { page = Math.max(1, page - 1); render(); });
+            $('#next-page').on('click', function () { page = page + 1; render(); });
+
+            // initial render
+            render();
+        });
+
+    </script>
+</body>
+
+</html>

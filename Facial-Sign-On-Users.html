@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="assets/css/dataTable.css" />
     <link rel="stylesheet" href="assets/css/apex-charts.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/styles.v2.css" />
 
     <!-- PAGE CSS -->
 
@@ -34,106 +35,6 @@
     <!-- Helpers -->
     <script src="assets/js/helpers.js"></script>
     <script src="assets/js/config.js"></script>
-
-    <style>
-        .avatar-next {
-            position: relative;
-            width: 2.375rem;
-            height: 2.375rem;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-        }
-
-        .avatar.avatar-number {
-            background: #03a9f4;
-            border: 2px solid #fff;
-            border-radius: 50%;
-            color: #fff;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 11px;
-            font-weight: bold;
-        }
-
-        .bg-label-primary {
-            background-color: #d6f2ff !important;
-            color: #03a9f4 !important;
-        }
-
-        .card-footer-bg {
-            border-radius: 0 0 0.375rem 0.375rem;
-        }
-
-        .btn-label-primary {
-            color: #03a9f4;
-            border-color: rgba(0, 0, 0, 0);
-            background: #d6f2ff;
-        }
-
-        .progress {
-            height: 5px;
-            position: relative;
-            overflow: inherit;
-        }
-
-        .process-bar-circle {
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            top: -5px;
-        }
-
-        .text-bold {
-            font-weight: 600;
-        }
-
-        .mb-6 {
-            margin-bottom: 3em;
-        }
-        .breadcrumb {
-            margin-bottom: 0;
-            text-transform: capitalize;
-            font-weight: 300;
-            font-size: 13px;
-            line-height: 17px;
-        }
-        .card-body {
-            padding: 0;
-        }
-        .w-full {
-            width: 100%;
-        }
-
-        .search-box {
-            position: relative;
-        }
-        .search-box i {
-            top: 12px;
-            font-size: 16px;
-            right: 13px;
-            position: absolute;
-        }
-        .flex-end {
-            justify-content: flex-end;
-        }
-        .header-card {
-            padding: 1rem;
-        }
-        .inline-flex {
-            display: inline-flex;
-        }
-        .facial-user {
-            width: 70px;
-            border-radius: 15px;
-            height: 70px;
-            object-fit: cover;
-        }
-    </style>
 
 </head>
 
@@ -186,7 +87,7 @@
                     <li class="menu-item open">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon tf-icons fal fa-user-shield"></i>
-                            <div>Facial-Sign On</div>
+                            <div>Facial-Sign In</div>
                         </a>
                         <ul class="menu-sub">
                             <li class="menu-item ">
@@ -197,6 +98,11 @@
                             <li class="menu-item active">
                                 <a href="Facial-Sign-On-Users.html" class="menu-link">
                                     <div>Users</div>
+                                </a>
+                            </li>
+                            <li class="menu-item ">
+                                <a href="Facial-Sign-In-Tracker.html" class="menu-link">
+                                    <div>Login Tracker</div>
                                 </a>
                             </li>
                         </ul>
@@ -291,133 +197,99 @@
                 </nav>
                 <!-- Copy Content Start -->
                 <div class="container-fluid">
-                    <div class="card bg-white mt-4">
-                        <div class="card-body">
-                            <div class=" header-card ">
-                                <div class="row justify-between align-items-center">
-                                    <div class="col-md-4 col-xs-12">
-                                        <h5 class="card-header">Users</h5>
-                                    </div>
-                                    <div class="col col-4 col-xs-12">
-                                        <div class="d-flex flex-start align-items-center">
-                                            <div class="search-box w-full">
-                                                <form id="form_search_app" action="#"
-                                                    method="get" data-remote="true">
-                                                    <input type="text" class="form-control" placeholder="Search ..."
-                                                        name="search">
-                                                    <i class="fal fa-search"></i>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
+                    <div class="row mt-4 g-3">
+                        <div class="col-12 col-md-4">
+                            <div class="p-3 rounded-3 kpi d-flex align-items-center gap-2 h-100">
+                                <div class="small text-muted">Range</div>
+                                <div class="ms-auto btn-group gap-2">
+                                    <button class="btn btn-sm btn-ghost range rounded " data-range="7d">7d</button>
+                                    <button class="btn btn-sm btn-ghost range rounded active"
+                                        data-range="30d">30d</button>
+                                    <button class="btn btn-sm btn-ghost range rounded" data-range="90d">90d</button>
+                                    <button class="btn btn-sm btn-ghost range rounded " data-range="all">All</button>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-12 col-md-5">
+                            <div class="p-3 rounded-3 kpi d-flex align-items-center gap-2 h-100">
+                                <div class="small text-muted">Status</div>
+                                <div class="ms-auto btn-group gap-2">
+                                    <button class="btn btn-sm btn-ghost status rounded active" data-status="all">All</button>
+                                    <button class="btn btn-sm btn-ghost status rounded "
+                                        data-status="invited">Invited</button>
+                                    <button class="btn btn-sm btn-ghost status rounded"
+                                        data-status="pending_face_enroll">Pending Face Enroll</button>
+                                    <button class="btn btn-sm btn-ghost status rounded"
+                                        data-status="enrolled">Enrolled</button>
+                                    <button class="btn btn-sm btn-ghost status rounded"
+                                        data-status="verified">Verified</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <div class="p-3 rounded-3 kpi d-flex align-items-center gap-2 h-100">
+                                <input id="search" class="form-control form-control-sm border-0 fs-15"
+                                    placeholder="Search name, email or device...">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- KPI Row -->
+                    <div class="row mt-3 g-3">
+                        <div class="col-6 col-md-3">
+                            <div class="p-3 rounded-3 kpi text-left">
+                                <div class="small text-muted">Total Users</div>
+                                <div id="kpiTotal" class="h4 mb-0">0</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="p-3 rounded-3 kpi text-left">
+                                <div class="small text-muted">Enrolled</div>
+                                <div id="kpiEnrolled" class="h4 mb-0">0</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="p-3 rounded-3 kpi text-left">
+                                <div class="small text-muted">Verified</div>
+                                <div id="kpiVerified" class="h4 mb-0">0</div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="p-3 rounded-3 kpi text-left">
+                                <div class="small text-muted">Blocked/Revoked</div>
+                                <div id="kpiBlocked" class="h4 mb-0">0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-white mt-4">
+                        <div class="card-body">
                             <div class="list_servers">
-                                <div class="folder-wrap document-listview">
+                                <div class="folder-wrap document-listview table-responsive">
                                     <table class="table table-document" id="dataTables">
                                         <thead>
                                             <tr>
-                                                <th>Email</th>
-                                                <th>Facial</th>
-                                                <th>Created At</th>
-                                                <th>Updated At</th>
-                                                <th>Apps</th>
-                                                <th>Actions</th>
+                                                <th style="width:48px"><input id="selectAll" type="checkbox"></th>
+                                                <th>Face</th>
+                                                <th>User</th>
+                                                <th>Status</th>
+                                                <th>Progress</th>
+                                                <th>Device</th>
+                                                <th>Risk</th>
+                                                <th>Created</th>
+                                                <th class="d-none d-md-table-cell">Last Activity</th>
+                                                <th class="text-end">Actions</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <span>Dany Tran</span>
-                                                </td>
-                                                <td>
-                                                    <img src="assets/images/avatars/1.png" alt="" class="facial-user">
-                                                </td>
-                                                <td>
-                                                    <span>Jul 20, 2025 - 10:08 AM</span>
-                                                </td>
-                                                <td>
-                                                    <span>Jul 20, 2025 - 10:30 AM</span>
-                                                </td>
-                                                <td>
-                                                    <span>5</span>
-                                                </td>
-                                                <td>
-                                                    <a href="javascript:;" class="btn btn-sm btn-danger btn-delete-user">
-                                                        <i class="fal fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <span>Thu Hien</span>
-                                                </td>
-                                                <td>
-                                                    <img src="assets/images/avatars/2.png" alt="" class="facial-user">
-                                                </td>
-                                                <td>
-                                                    <span>Jul 15, 2025 - 10:08 AM</span>
-                                                </td>
-                                                <td>
-                                                    <span>Jul 15, 2025 - 10:30 AM</span>
-                                                </td>
-                                                <td>
-                                                    <span>4</span>
-                                                </td>
-                                                <td>
-                                                    <a href="javascript:;" class="btn btn-sm btn-danger btn-delete-user">
-                                                        <i class="fal fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <span>Minh Garbiel</span>
-                                                </td>
-                                                <td>
-                                                    <img src="assets/images/avatars/3.png" alt="" class="facial-user">
-                                                </td>
-                                                <td>
-                                                    <span>Jul 10, 2025 - 10:08 AM</span>
-                                                </td>
-                                                <td>
-                                                    <span>Jul 11, 2025 - 10:30 AM</span>
-                                                </td>
-                                                <td>
-                                                    <span>4</span>
-                                                </td>
-                                                <td>
-                                                    <a href="javascript:;" class="btn btn-sm btn-danger btn-delete-user">
-                                                        <i class="fal fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <span>Ha Bin</span>
-                                                </td>
-                                                <td>
-                                                    <img src="assets/images/avatars/4.png" alt="" class="facial-user">
-                                                </td>
-                                                <td>
-                                                    <span>Jul 10, 2025 - 10:08 AM</span>
-                                                </td>
-                                                <td>
-                                                    <span>Jul 10, 2025 - 10:30 AM</span>
-                                                </td>
-                                                <td>
-                                                    <span>6</span>
-                                                </td>
-                                                <td>
-                                                    <a href="javascript:;" class="btn btn-sm btn-danger btn-delete-user">
-                                                        <i class="fal fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
+                                        <tbody id="userTableBody"></tbody>
                                     </table>
                                 </div>
-
+                                <div class="d-flex align-items-center justify-content-between p-3 border-top">
+                                    <div class="page-info" id="pageInfo"></div>
+                                    <div>
+                                        <button id="prevPage" class="btn btn-sm btn-outline-secondary">Prev</button>
+                                        <span class="mx-2" id="pageNumber">Page 1/2</span>
+                                        <button id="nextPage" class="btn btn-sm btn-outline-secondary">Next</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -464,10 +336,174 @@
 
         $('#confirmDeleteBtn').on('click', function () {
             if ($rowToDelete) {
-            $rowToDelete.remove();
-            $rowToDelete = null;
-            $('#confirmDeleteModal').modal('hide');
+                $rowToDelete.remove();
+                $rowToDelete = null;
+                $('#confirmDeleteModal').modal('hide');
             }
+        });
+    </script>
+    <script>
+        // ---- Data (24 rows hard-coded) ----
+        const USERS = (() => {
+            const names = [
+                ["Alice Lee", "alice@company.com"], ["Bob Smith", "bob@company.com"], ["Carol Tran", "carol@company.com"], ["David Kim", "david@company.com"], ["Erin Chen", "erin@company.com"], ["Frank Zhao", "frank@company.com"], ["Grace Park", "grace@company.com"], ["Huy Quach", "huy@company.com"], ["Ivy Nguyen", "ivy@company.com"], ["John Doe", "john@company.com"]
+            ];
+            const devices = ["iPhone 15", "Pixel 8", "Galaxy S24", "MacBook Pro", "Surface Pro"];
+            const statuses = ["invited", "pending_face_enroll", "enrolled", "verified", "blocked", "revoked"];
+            const now = Date.now();
+            const pick = (a) => a[Math.floor(Math.random() * a.length)];
+            const arr = [];
+            for (let i = 0; i < 24; i++) {
+                const [n, e] = pick(names);
+                const s = pick(statuses);
+                const created = new Date(now - Math.random() * 1000 * 60 * 60 * 24 * 90);
+                const last = new Date(created.getTime() + Math.random() * 1000 * 60 * 60 * 24 * 30);
+                const steps = {
+                    emailVerified: s !== 'invited',
+                    faceEnrolled: ['enrolled', 'verified'].includes(s),
+                    backupEnabled: s === 'verified',
+                    recoverySet: s === 'verified'
+                };
+                arr.push({
+                    id: 'u' + i,
+                    displayName: n,
+                    email: e,
+                    status: s,
+                    createdAt: created.toISOString(),
+                    lastActivity: last.toISOString(),
+                    device: pick(devices),
+                    riskScore: Math.floor(Math.random() * 100),
+                    steps, faceUrl: `https://i.pravatar.cc/64?u=${encodeURIComponent(e)}&img=${i + 1}`
+                });
+            }
+            return arr;
+        })();
+
+        // ---- State ----
+        const PAGE_SIZE = 12; let currentPage = 1; let currentRange = '30d'; let currentStatus = 'all';
+        let currentQuery = '';
+        const selected = new Set();
+
+        function formatDate(iso) { const d = new Date(iso); return d.toLocaleDateString(); }
+        function formatDateTime(iso) { const d = new Date(iso); return d.toLocaleString(); }
+
+        function render() {
+            // filter
+            const fromDate = (() => {
+                const now = Date.now(); if (currentRange === '7d') return now - 7 * 24 * 3600 * 1000; if (currentRange === '30d') return now - 30 * 24 * 3600 * 1000; if (currentRange === '90d') return now - 90 * 24 * 3600 * 1000; return 0;
+            })();
+            const q = currentQuery.trim().toLowerCase();
+            const filtered = USERS.filter(u => {
+                if (currentStatus !== 'all' && u.status !== currentStatus) return false;
+                if (new Date(u.createdAt).getTime() < fromDate) return false;
+                if (q) { if (!(u.email.toLowerCase().includes(q) || u.displayName.toLowerCase().includes(q) || u.device.toLowerCase().includes(q))) return false; }
+                return true;
+            });
+
+            // KPIs
+            $('#kpiTotal').text(filtered.length);
+            $('#kpiEnrolled').text(filtered.filter(u => ['enrolled', 'verified'].includes(u.status)).length);
+            $('#kpiVerified').text(filtered.filter(u => u.status === 'verified').length);
+            $('#kpiBlocked').text(filtered.filter(u => ['blocked', 'revoked'].includes(u.status)).length);
+
+            const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+            if (currentPage > totalPages) currentPage = totalPages;
+            const start = (currentPage - 1) * PAGE_SIZE; const pageSlice = filtered.slice(start, start + PAGE_SIZE);
+
+            const $tbody = $('#userTableBody').empty();
+            if (pageSlice.length === 0) { $tbody.append('<tr><td colspan="10" class="text-center py-4 text-muted">No users for this filter.</td></tr>'); }
+            pageSlice.forEach(u => {
+                const stepsDone = [u.steps.emailVerified, u.steps.faceEnrolled, u.steps.backupEnabled, u.steps.recoverySet].filter(Boolean).length;
+                const progressPct = Math.round((stepsDone / 4) * 100);
+                const $tr = $(
+                    `<tr class="align-middle">
+            <td><input type="checkbox" class="row-select" data-id="${u.id}" ${selected.has(u.id) ? 'checked' : ''}></td>
+            <td><img src="${u.faceUrl}" class="face-thumb" alt="${u.email}"></td>
+            <td><div class="fw-semibold">${u.displayName}</div><div class="small text-muted">${u.email}</div></td>
+            <td><span class="badge color-${u.status.replace(/_/g, ' ')}">${u.status.replace(/_/g, ' ')}</span></td>
+            <td>
+              <div class="d-flex align-items-center gap-2">
+                <div class="step-bar" style="width:110px"><i style="width:${progressPct}%"></i></div>
+                <div class="small text-muted">${stepsDone}/4</div>
+              </div>
+            </td>
+            <td>${u.device}</td>
+            <td><span class="status-badge">${u.riskScore}</span></td>
+            <td>${formatDate(u.createdAt)}</td>
+            <td class="d-none d-md-table-cell">${formatDateTime(u.lastActivity)}</td>
+            <td class="text-end">
+              ${u.status === 'invited' ? '<button class="btn btn-sm btn-outline-primary me-1 resend" data-id="' + u.id + '">Resend</button>' : ''}
+              ${u.status !== 'blocked' && u.status !== 'revoked' ? '<button class="btn btn-sm btn-outline-danger block" data-id="' + u.id + '">Block</button>' : ''}
+            </td>
+          </tr>`
+                );
+                $tbody.append($tr);
+            });
+
+            $('#pageInfo').text(filtered.length + ' users');
+            $('#pageNumber').text('Page ' + currentPage + ' / ' + totalPages);
+            $('#selectAll').prop('checked', pageSlice.length > 0 && pageSlice.every(u => selected.has(u.id)));
+        }
+
+        // ---- Events ----
+        $(function () {
+            $('#year').text(new Date().getFullYear());
+
+            // initial render
+            render();
+
+            // search
+            $('#search').on('input', function () { currentQuery = $(this).val(); currentPage = 1; render(); });
+
+            // range buttons
+            $('.range').on('click', function () { $('.range').removeClass('active'); $(this).addClass('active'); currentRange = $(this).data('range'); currentPage = 1; render(); });
+
+            // status
+            $('.status').on('click', function () { $('.status').removeClass('active'); $(this).addClass('active'); currentStatus = $(this).data('status'); currentPage = 1; render(); });
+
+            // pagination
+            $('#prevPage').on('click', function () { if (currentPage > 1) { currentPage--; render(); } });
+            $('#nextPage').on('click', function () { currentPage++; render(); });
+
+            // row select
+            $(document).on('change', '.row-select', function () { const id = $(this).data('id'); if (this.checked) selected.add(id); else selected.delete(id); $('#selectAll').prop('checked', false); });
+            $('#selectAll').on('change', function () { const checked = this.checked; $('#userTableBody .row-select').each(function () { $(this).prop('checked', checked); const id = $(this).data('id'); if (checked) selected.add(id); else selected.delete(id); }); });
+
+            // resend per row
+            $(document).on('click', '.resend', function () { alert('Resent invite for user id: ' + $(this).data('id')); });
+
+            // block per row
+            $(document).on('click', '.block', function () { alert('Blocked user id: ' + $(this).data('id')); });
+
+            // resend selected
+            $('#resendSelected').on('click', function () { const count = Array.from(selected).filter(id => USERS.find(u => u.id === id && u.status === 'invited')).length; alert('Resent ' + count + ' invitation(s).'); });
+
+            // export csv
+            function csvForRows(rows) {
+                const headers = ['id', 'email', 'display_name', 'status', 'created_at', 'last_activity', 'device', 'risk', 'email_verified', 'face_enrolled', 'backup_enabled', 'recovery_set', 'face_url'];
+                const lines = [headers.join(',')];
+                rows.forEach(r => {
+                    const vals = [r.id, r.email, r.displayName, r.status, r.createdAt, r.lastActivity, r.device, r.riskScore, r.steps.emailVerified, r.steps.faceEnrolled, r.steps.backupEnabled, r.steps.recoverySet, r.faceUrl];
+                    const esc = v => { const s = String(v === undefined ? '' : v); return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+                    lines.push(vals.map(esc).join(','));
+                });
+                return lines.join('\n');
+            }
+            $('#exportCsv').on('click', function () {
+                // export current filtered rows
+                const fromDate = (() => { const now = Date.now(); if (currentRange === '7d') return now - 7 * 24 * 3600 * 1000; if (currentRange === '30d') return now - 30 * 24 * 3600 * 1000; if (currentRange === '90d') return now - 90 * 24 * 3600 * 1000; return 0; })();
+                const q = currentQuery.trim().toLowerCase();
+                const filtered = USERS.filter(u => {
+                    if (currentStatus !== 'all' && u.status !== currentStatus) return false;
+                    if (new Date(u.createdAt).getTime() < fromDate) return false;
+                    if (q) { if (!(u.email.toLowerCase().includes(q) || u.displayName.toLowerCase().includes(q) || u.device.toLowerCase().includes(q))) return false; }
+                    return true;
+                });
+                const csv = csvForRows(filtered);
+                const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+                const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'axiam_onboarding_' + Date.now() + '.csv'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+            });
+
         });
     </script>
 </body>

@@ -134,7 +134,7 @@ a.bg-primary:hover,a.bg-primary:focus {
 }
 
 .bg-primary.bg-glow {
-    box-shadow: 0px 2px 3px 0px rgba(115,103,240,.3)
+    box-shadow: 0px 2px 3px 0px rgba(115,103,240,0.3)
 }
 
 .page-item.active .page-link,.pagination li.active>a:not(.page-link) {
@@ -541,7 +541,7 @@ a.list-group-item-primary.active,button.list-group-item-primary.active {
 
 .switch-input:focus~.switch-toggle-slider {
     border: 1px solid #03a9f4;
-    box-shadow: 0 0 .25rem .05rem rgba(115,103,240,.1)
+    box-shadow: 0 0 .25rem .05rem rgba(115,103,240,0.1)
 }
 
 .switch-primary.switch .switch-input:checked~.switch-toggle-slider {
@@ -556,21 +556,21 @@ a.list-group-item-primary.active,button.list-group-item-primary.active {
 
 .switch-primary.switch .switch-input:focus~.switch-toggle-slider {
     border: 1px solid #03a9f4;
-    box-shadow: 0 0 .25rem .05rem rgba(115,103,240,.1)
+    box-shadow: 0 0 .25rem .05rem rgba(115,103,240,0.1)
 }
 
 .timeline .timeline-item-primary .timeline-event {
-    background-color: rgba(115,103,240,.1)
+    background-color: rgba(115,103,240,0.1)
 }
 
 .timeline .timeline-item-primary .timeline-event:before {
-    border-left-color: rgba(115,103,240,.1) !important;
-    border-right-color: rgba(115,103,240,.1) !important
+    border-left-color: rgba(115,103,240,0.1) !important;
+    border-right-color: rgba(115,103,240,0.1) !important
 }
 
 .timeline .timeline-point-primary {
     background-color: #03a9f4 !important;
-    box-shadow: 0 0 0 .1875rem rgba(115,103,240,.16)
+    box-shadow: 0 0 0 .1875rem rgba(115,103,240,0.16)
 }
 
 .timeline .timeline-indicator-primary i {
@@ -582,7 +582,7 @@ a.list-group-item-primary.active,button.list-group-item-primary.active {
 }
 
 .navbar.bg-primary {
-    background-color: rgba(115,103,240,.95) !important;
+    background-color: rgba(115,103,240,0.95) !important;
     color: #e2dffc
 }
 
@@ -621,7 +621,7 @@ a.list-group-item-primary.active,button.list-group-item-primary.active {
 
 .navbar.bg-primary .navbar-toggler {
     color: #e2dffc;
-    border-color: rgba(255,255,255,.15)
+    border-color: rgba(255,255,255,0.15)
 }
 
 .navbar.bg-primary .navbar-toggler-icon {
@@ -641,7 +641,7 @@ a.list-group-item-primary.active,button.list-group-item-primary.active {
 }
 
 .navbar.bg-primary hr {
-    border-color: rgba(255,255,255,.15)
+    border-color: rgba(255,255,255,0.15)
 }
 
 .menu.bg-primary {
@@ -650,7 +650,7 @@ a.list-group-item-primary.active,button.list-group-item-primary.active {
 }
 
 .menu.bg-primary.menu-horizontal {
-    background-color: rgba(115,103,240,.95) !important
+    background-color: rgba(115,103,240,0.95) !important
 }
 
 .menu.bg-primary .menu-link,.menu.bg-primary .menu-horizontal-prev,.menu.bg-primary .menu-horizontal-next {
@@ -675,7 +675,7 @@ a.list-group-item-primary.active,button.list-group-item-primary.active {
 
 .menu.bg-primary.menu-vertical .menu-item.active>.menu-link:not(.menu-toggle) {
     background: linear-gradient(72.47deg, #776bf0 22.16%, rgba(119, 107, 240, 0.7) 76.47%);
-    box-shadow: 0px 2px 6px 0px rgba(119,107,240,.48);
+    box-shadow: 0px 2px 6px 0px rgba(119,107,240,0.48);
     color: #fff !important
 }
 
@@ -686,12 +686,12 @@ a.list-group-item-primary.active,button.list-group-item-primary.active {
 .menu.bg-primary.menu-horizontal .menu-inner>.menu-item.active>.menu-link.menu-toggle {
     background: linear-gradient(72.47deg, #776bf0 22.16%, rgba(119, 107, 240, 0.7) 76.47%);
     color: #fff !important;
-    box-shadow: 0px 2px 6px 0px rgba(119,107,240,.48)
+    box-shadow: 0px 2px 6px 0px rgba(119,107,240,0.48)
 }
 
 [dir=rtl] .menu.bg-primary.menu-horizontal .menu-inner>.menu-item.active>.menu-link.menu-toggle {
     background: linear-gradient(72.47deg, rgba(119, 107, 240, 0.7) 22.16%, #776bf0 76.47%);
-    box-shadow: 0px 2px 6px 0px rgba(119,107,240,.48);
+    box-shadow: 0px 2px 6px 0px rgba(119,107,240,0.48);
     color: #fff !important
 }
 
@@ -722,7 +722,7 @@ a.list-group-item-primary.active,button.list-group-item-primary.active {
 }
 
 .menu.bg-primary hr,.menu.bg-primary .menu-divider,.menu.bg-primary .menu-inner>.menu-item.open>.menu-sub::before {
-    border-color: rgba(255,255,255,.15) !important
+    border-color: rgba(255,255,255,0.15) !important
 }
 
 .menu.bg-primary .menu-block::before {
@@ -730,7 +730,7 @@ a.list-group-item-primary.active,button.list-group-item-primary.active {
 }
 
 .menu.bg-primary .ps__thumb-y,.menu.bg-primary .ps__rail-y.ps--clicking>.ps__thumb-y {
-    background: rgba(255,255,255,.5916956863) !important
+    background: rgba(255,255,255,0.6) !important
 }
 
 .layout-footer-fixed .layout-horizontal .footer.bg-primary {
@@ -764,7 +764,7 @@ a.list-group-item-primary.active,button.list-group-item-primary.active {
 }
 
 .footer.bg-primary hr {
-    border-color: rgba(255,255,255,.15)
+    border-color: rgba(255,255,255,0.15)
 }
 
 .form-floating>.form-control:focus~label,.form-floating>.form-control:not(:placeholder-shown)~label,.form-floating>.form-select~label {
@@ -780,7 +780,7 @@ a.list-group-item-primary.active,button.list-group-item-primary.active {
 }
 
 .jstree-default .jstree-wholerow-hovered,.jstree-default .jstree-hovered {
-    background: rgba(115,103,240,.08);
+    background: rgba(115,103,240,0.08);
     color: #03a9f4
 }
 
@@ -790,7 +790,7 @@ a.list-group-item-primary.active,button.list-group-item-primary.active {
 }
 
 .jstree-default-dark .jstree-wholerow-hovered,.jstree-default-dark .jstree-hovered {
-    background: rgba(115,103,240,.08);
+    background: rgba(115,103,240,0.08);
     color: #03a9f4
 }
 
@@ -840,7 +840,7 @@ a:hover {
 }
 
 .select2-primary .select2-container--default .select2-selection--multiple .select2-selection__choice {
-    background: rgba(115,103,240,.16) !important;
+    background: rgba(115,103,240,0.16) !important;
     color: #03a9f4 !important
 }
 
@@ -855,7 +855,7 @@ a:hover {
 table.dataTable.dtr-column>tbody>tr>td.control:before,table.dataTable.dtr-column>tbody>tr>th.control:before {
     background-color: #03a9f4;
     border: 2px solid #fff;
-    box-shadow: 0 0 3px rgba(75,70,92,.8)
+    box-shadow: 0 0 3px rgba(75,70,92,0.8)
 }
 
 .bootstrap-select .dropdown-menu.inner a[aria-selected=true] {
@@ -882,8 +882,8 @@ table.dataTable.dtr-column>tbody>tr>td.control:before,table.dataTable.dtr-column
 }
 
 .datepicker table tr td.range.disabled,.datepicker table tr td.range.highlighted.disabled,.datepicker table tr td.range.today.disabled {
-    background: rgba(233,231,253,.5) !important;
-    color: rgba(115,103,240,.5) !important
+    background: rgba(233,231,253,0.5) !important;
+    color: rgba(115,103,240,0.5) !important
 }
 
 .datepicker table tr td.today:not(.active) {
@@ -1022,13 +1022,13 @@ li.ui-timepicker-selected,.ui-timepicker-list .ui-timepicker-selected:hover {
 }
 
 .fc .fc-button-primary:not(.fc-prev-button):not(.fc-next-button) {
-    background-color: rgba(115,103,240,.16) !important;
+    background-color: rgba(115,103,240,0.16) !important;
     border: 0;
     color: #03a9f4
 }
 
 .fc .fc-button-primary:not(.fc-prev-button):not(.fc-next-button).fc-button-active,.fc .fc-button-primary:not(.fc-prev-button):not(.fc-next-button):hover {
-    background-color: rgba(115,103,240,.24) !important;
+    background-color: rgba(115,103,240,0.24) !important;
     color: #03a9f4
 }
 
@@ -1195,15 +1195,15 @@ li.ui-timepicker-selected,.ui-timepicker-list .ui-timepicker-selected:hover {
 }
 
 .landing-features .features-icon-wrapper .features-icon-box .features-icon {
-    border: 2px solid rgba(115,103,240,.2)
+    border: 2px solid rgba(115,103,240,0.2)
 }
 
 .landing-features .features-icon-wrapper .features-icon-box:hover .features-icon {
-    background-color: rgba(115,103,240,.05)
+    background-color: rgba(115,103,240,0.05)
 }
 
 .bg-navbar-theme {
-    background-color: rgba(255,255,255,.95) !important;
+    background-color: rgba(255,255,255,0.95) !important;
     color: #6f6b7d
 }
 
@@ -1242,7 +1242,7 @@ li.ui-timepicker-selected,.ui-timepicker-list .ui-timepicker-selected:hover {
 
 .bg-navbar-theme .navbar-toggler {
     color: #6f6b7d;
-    border-color: rgba(93,89,108,.075)
+    border-color: rgba(93,89,108,0.075)
 }
 
 .bg-navbar-theme .navbar-toggler-icon {
@@ -1262,7 +1262,7 @@ li.ui-timepicker-selected,.ui-timepicker-list .ui-timepicker-selected:hover {
 }
 
 .bg-navbar-theme hr {
-    border-color: rgba(93,89,108,.075)
+    border-color: rgba(93,89,108,0.075)
 }
 
 .layout-navbar {
@@ -1279,7 +1279,7 @@ li.ui-timepicker-selected,.ui-timepicker-list .ui-timepicker-selected:hover {
 }
 
 .navbar-detached {
-    box-shadow: 0 .125rem .25rem rgba(165,163,174,.3)
+    box-shadow: 0 .125rem .25rem rgba(165,163,174,0.3)
 }
 
 .layout-navbar-fixed .layout-page:before {
@@ -1295,7 +1295,7 @@ li.ui-timepicker-selected,.ui-timepicker-list .ui-timepicker-selected:hover {
 }
 
 .bg-menu-theme.menu-horizontal {
-    background-color: rgba(255,255,255,.95) !important
+    background-color: rgba(255,255,255,0.95) !important
 }
 
 .bg-menu-theme .menu-link,.bg-menu-theme .menu-horizontal-prev,.bg-menu-theme .menu-horizontal-next {
@@ -1325,18 +1325,18 @@ li.ui-timepicker-selected,.ui-timepicker-list .ui-timepicker-selected:hover {
 }
 
 [dir=rtl] .bg-menu-theme.menu-vertical .menu-item.active>.menu-link:not(.menu-toggle) {
-    background: linear-gradient(72.47deg, #2196F3 22.16%, rgb(33 150 243 / 70%) 76.47%);
+    background: linear-gradient(72.47deg, #2196F3 22.16%, rgba(33, 150, 243, 0.7) 76.47%);
 }
 
 .bg-menu-theme.menu-horizontal .menu-inner>.menu-item.active>.menu-link.menu-toggle {
-    background: linear-gradient(72.47deg, #2196F3 22.16%, rgb(33 150 243 / 70%) 76.47%);
+    background: linear-gradient(72.47deg, #2196F3 22.16%, rgba(33, 150, 243, 0.7) 76.47%);
     color: #fff !important;
-    box-shadow: 0px 2px 6px 0px rgba(115,103,240,.48)
+    box-shadow: 0px 2px 6px 0px rgba(115,103,240,0.48)
 }
 
 [dir=rtl] .bg-menu-theme.menu-horizontal .menu-inner>.menu-item.active>.menu-link.menu-toggle {
-    background: linear-gradient(72.47deg, #2196F3 22.16%, rgb(33 150 243 / 70%) 76.47%);
-    box-shadow: 0px 2px 6px 0px rgba(115,103,240,.48);
+    background: linear-gradient(72.47deg, #2196F3 22.16%, rgba(33, 150, 243, 0.7) 76.47%);
+    box-shadow: 0px 2px 6px 0px rgba(115,103,240,0.48);
     color: #fff !important
 }
 
@@ -1375,12 +1375,12 @@ li.ui-timepicker-selected,.ui-timepicker-list .ui-timepicker-selected:hover {
 }
 
 .bg-menu-theme .ps__thumb-y,.bg-menu-theme .ps__rail-y.ps--clicking>.ps__thumb-y {
-    background: rgba(93,89,108,.2) !important
+    background: rgba(93,89,108,0.2) !important
 }
 
 @media(min-width: 1200px) {
     .bg-menu-theme {
-        box-shadow:0 .125rem .25rem rgba(165,163,174,.3)
+        box-shadow:0 .125rem .25rem rgba(165,163,174,0.3)
     }
 }
 
@@ -1427,16 +1427,16 @@ html:not(.layout-menu-collapsed) .bg-menu-theme .menu-inner .menu-item:not(.acti
 }
 
 .bg-footer-theme hr {
-    border-color: rgba(93,89,108,.075)
+    border-color: rgba(93,89,108,0.075)
 }
 
 .layout-footer-fixed .layout-wrapper:not(.layout-horizontal) .content-footer .footer-container,.layout-footer-fixed .layout-wrapper.layout-horizontal .content-footer {
-    box-shadow: 0 .25rem 1rem rgba(165,163,174,.45)
+    box-shadow: 0 .25rem 1rem rgba(165,163,174,0.45)
 }
 
-.dataTables_length, 
-.dataTables_filter, 
-.dataTables_info, 
+.dataTables_length,
+.dataTables_filter,
+.dataTables_info,
 .dataTables_paginate {
     padding: 0 1.5em;
 }
