@@ -281,6 +281,7 @@
                                                 <th>Time</th>
                                                 <th>Face</th>
                                                 <th>User</th>
+                                                <th>Apps</th>
                                                 <th>Outcome</th>
                                                 <th>Risk</th>
                                                 <th>IP</th>
@@ -370,6 +371,7 @@
                     { id: 'u_004', email: 'dave@company.com' },
                     { id: 'u_005', email: 'erin@company.com' }
                 ];
+                const apps = ['Docerfy', 'Epicater', 'Gerry Connect', 'Ventailor', 'Checify'];
                 const countries = ['CA', 'US', 'GB', 'DE', 'VN'];
                 const devices = ['iPhone 15', 'Pixel 8', 'Galaxy S24', 'MacBook Pro', 'Surface Pro'];
                 const browsers = ['Safari', 'Chrome', 'Edge', 'Firefox'];
@@ -386,6 +388,7 @@
                         ts: t.toISOString(),
                         userId: u.id,
                         email: u.email,
+                        apps: pick(apps),
                         outcome: success ? 'success' : 'failure',
                         riskScore: risk,
                         ip: `192.168.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}`,
@@ -412,7 +415,7 @@
             function fmtPct(n) { return (n * 100).toFixed(1) + '%'; }
 
             function csvExport(rows) {
-                const headers = ['id', 'timestamp', 'userId', 'email', 'outcome', 'risk', 'ip', 'country', 'device', 'browser', 'reason', 'face_url'];
+                const headers = ['id', 'timestamp', 'userId', 'email', 'apps', 'outcome', 'risk', 'ip', 'country', 'device', 'browser', 'reason', 'face_url'];
                 const lines = [headers.join(',')];
                 rows.forEach(r => {
                     const line = headers.map(h => {
@@ -511,8 +514,9 @@
                     else if (r.riskScore >= 40) riskClass = 'badge color-pending';
                     const row = `<tr class="align-middle">
       <td style="white-space:nowrap">${new Date(r.ts).toLocaleString()}</td>
-      <td><div class="d-flex align-items-center gap-2"><img src="${r.faceUrl}" alt="${r.email}" class="face-thumb"/><div class="muted-xs">thumb</div></div></td>
+      <td><div class="d-flex align-items-center gap-2"><img src="${r.faceUrl}" alt="${r.email}" class="face-thumb"/></div></td>
       <td><div class="fw-medium">${r.email}</div><div class="muted-xs">${r.userId}</div></td>
+      <td>${r.apps}</td>
       <td>${outcomeBadge}</td>
       <td><span class="${riskClass}">${r.riskScore}</span></td>
       <td>${r.ip}</td>
