@@ -1387,3 +1387,7 @@ input.form-control.outlined {
 .pb-100 {
     padding-bottom: 100px;
 }
+
+.btn-group, .btn-group-vertical {
+    flex-wrap: wrap;
+}
